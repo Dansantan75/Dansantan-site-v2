@@ -571,13 +571,19 @@ export default function DansantanWebsite() {
             <FadeIn delay={0.12}>
               <div className="lg:col-span-3">
                 <form
-                  onSubmit={onSubmit}
+                  <input type="hidden" name="_subject" value="New DANSANTAN website enquiry" />
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_replyto" value={form.email} />
+                  <input type="hidden" name="_captcha" value="false" />
+                  action="https://formspree.io/f/meeqvwwp
+                  method="POST"
                   className="rounded-2xl border border-black/10 bg-white/70 p-6 shadow-sm backdrop-blur"
                 >
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div>
                       <label className="text-xs font-medium text-black/70">Name</label>
                       <input
+                        name="name"
                         value={form.name}
                         onChange={(e) => setForm((s) => ({ ...s, name: e.target.value }))}
                         onBlur={() => setTouched((t) => ({ ...t, name: true }))}
@@ -591,6 +597,7 @@ export default function DansantanWebsite() {
                     <div>
                       <label className="text-xs font-medium text-black/70">Email</label>
                       <input
+                        name="email"
                         value={form.email}
                         onChange={(e) => setForm((s) => ({ ...s, email: e.target.value }))}
                         onBlur={() => setTouched((t) => ({ ...t, email: true }))}
@@ -613,6 +620,7 @@ export default function DansantanWebsite() {
                     <div className="sm:col-span-2">
                       <label className="text-xs font-medium text-black/70">Message</label>
                       <textarea
+                        name="message"
                         value={form.message}
                         onChange={(e) => setForm((s) => ({ ...s, message: e.target.value }))}
                         onBlur={() => setTouched((t) => ({ ...t, message: true }))}
@@ -641,7 +649,7 @@ export default function DansantanWebsite() {
 
                   {submitted ? (
                     <div className="mt-4 rounded-xl border border-black/10 bg-white p-3 text-sm text-black/70">
-                      If your email app didn’t open, please email <span className="font-medium">dansantancompany@gmail.com</span>.
+                      If your email app didn’t open, please email <span className="font-medium">info@dansantan.com</span>.
                     </div>
                   ) : null}
                 </form>
