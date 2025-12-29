@@ -18,8 +18,9 @@ import {
 // Single-file, production-ready landing page for DANSANTAN
 // Styling: Tailwind (available by default). No external assets required.
 
-const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => (
+const FadeIn = ({ children, delay = 0, className = "",}: { children: React.ReactNode; delay?: number; className?: string; }) => (
   <motion.div
+    className={className}
     initial={{ opacity: 0, y: 14 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-80px" }}
@@ -528,9 +529,15 @@ export default function DansantanWebsite() {
               subtitle="Send a note and we’ll come back with a recommended next step."
             />
           </FadeIn>
-
-          <div className="mt-10 grid gap-6 lg:grid-cols-5">
-            <FadeIn delay={0.08}>
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            <FadeIn delay={0.08} className="w-full">
+              <div>
+              </div>
+            </FadeIn>
+              <FadeIn delay={0.12} className="lg:col-span-3">
+              <div>
+              </div>
+              </FadeIn>
               <div className="lg:col-span-2">
                 <div className="rounded-2xl border border-black/10 bg-white/70 p-6 shadow-sm backdrop-blur">
                   <h3 className="text-base font-semibold">Details</h3>
@@ -569,7 +576,7 @@ export default function DansantanWebsite() {
             </FadeIn>
 
             <FadeIn delay={0.12}>
-              <div className="lg:col-span-3">
+              <div className="w-full">
                 <form
                   action="https://formspree.io/f/meeqvwwp"
                   method="POST"
@@ -611,6 +618,7 @@ export default function DansantanWebsite() {
                     <div className="sm:col-span-2">
                       <label className="text-xs font-medium text-black/70">Phone / WhatsApp (optional)</label>
                       <input
+                        name="phone"
                         value={form.phone}
                         onChange={(e) => setForm((s) => ({ ...s, phone: e.target.value }))}
                         className="mt-1 w-full rounded-xl border border-black/10 bg-white px-3 py-2 text-sm outline-none ring-0 focus:border-black/30"
