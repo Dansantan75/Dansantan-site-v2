@@ -571,14 +571,14 @@ export default function DansantanWebsite() {
             <FadeIn delay={0.12}>
               <div className="lg:col-span-3">
                 <form
+                  action="https://formspree.io/f/meeqvwwp"
+                  method="POST"
+                  className="rounded-2xl border border-black/10 bg-white/70 p-6 shadow-sm backdrop-blur"
+                >
                   <input type="hidden" name="_subject" value="New DANSANTAN website enquiry" />
                   <input type="hidden" name="_template" value="table" />
                   <input type="hidden" name="_replyto" value={form.email} />
                   <input type="hidden" name="_captcha" value="false" />
-                  action="https://formspree.io/f/meeqvwwp
-                  method="POST"
-                  className="rounded-2xl border border-black/10 bg-white/70 p-6 shadow-sm backdrop-blur"
-                >
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div>
                       <label className="text-xs font-medium text-black/70">Name</label>
@@ -649,7 +649,7 @@ export default function DansantanWebsite() {
 
                   {submitted ? (
                     <div className="mt-4 rounded-xl border border-black/10 bg-white p-3 text-sm text-black/70">
-                      If your email app didn’t open, please email <span className="font-medium">info@dansantan.com</span>.
+                      If your email app didn’t open, please email <span className="font-medium">therealmariov1@gmail.com</span>.
                     </div>
                   ) : null}
                 </form>
