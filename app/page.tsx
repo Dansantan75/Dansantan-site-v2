@@ -351,7 +351,7 @@ export default function DansantanWebsite() {
                   "Review P&L, bank and key store KPIs",
                   "Walk the operation (or do a video walkthrough)",
                   "Identify the 3–5 constraints holding performance back",
-                ],
+                  ],
               },
               {
                 step: "02",
@@ -518,7 +518,6 @@ export default function DansantanWebsite() {
           </div>
         </div>
       </section>
-
       {/* Contact */}
       <section id="contact" className="border-t border-black/5">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
@@ -530,15 +529,51 @@ export default function DansantanWebsite() {
             />
           </FadeIn>
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
-            <FadeIn delay={0.08} className="w-full">
-              <div>
-              </div>
-            </FadeIn>
-              <FadeIn delay={0.12} className="lg:col-span-3">
-              <div>
-              </div>
-              </FadeIn>
-              <div className="lg:col-span-2">
+  <FadeIn delay={0.08}>
+    <div className="rounded-2xl border border-black/10 bg-white/70 p-6 shadow-sm backdrop-blur">
+      <h3 className="text-base font-semibold">Details</h3>
+
+      <div className="mt-4 space-y-3 text-sm text-black/70">
+        <div className="flex items-start gap-3">
+          <Mail className="mt-0.5 h-4 w-4 text-black/40" />
+          <div>
+            <div className="font-medium text-black">Email</div>
+            <div className="text-black/70">dansantancompany@gmail.com</div>
+          </div>
+        </div>
+
+        <div className="flex items-start gap-3">
+          <Phone className="mt-0.5 h-4 w-4 text-black/40" />
+          <div>
+            <div className="font-medium text-black">Phone</div>
+            <div className="text-black/70">+27 (0)00 000 0000</div>
+          </div>
+        </div>
+
+        <div className="flex items-start gap-3">
+          <MapPin className="mt-0.5 h-4 w-4 text-black/40" />
+          <div>
+            <div className="font-medium text-black">Location</div>
+            <div className="text-black/70">South Africa</div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-6 rounded-2xl border border-black/10 bg-white p-5">
+        <div className="text-xs font-semibold text-black/60">Prefer WhatsApp?</div>
+        <p className="mt-2 text-sm text-black/70">
+          Add your number in the form and we’ll reply with a convenient time.
+        </p>
+      </div>
+    </div>
+  </FadeIn>
+
+  <FadeIn delay={0.12}>
+    <div className="w-full">
+      {/* your <form> ... </form> stays here */}
+    </div>
+  </FadeIn>
+</div>
                 <div className="rounded-2xl border border-black/10 bg-white/70 p-6 shadow-sm backdrop-blur">
                   <h3 className="text-base font-semibold">Details</h3>
                   <div className="mt-4 space-y-3 text-sm text-black/70">
@@ -564,17 +599,14 @@ export default function DansantanWebsite() {
                       </div>
                     </div>
                   </div>
-
                   <div className="mt-6 rounded-2xl border border-black/10 bg-white p-5">
                     <div className="text-xs font-semibold text-black/60">Prefer WhatsApp?</div>
                     <p className="mt-2 text-sm text-black/70">
                       Add your number in the form and we’ll reply with a convenient time.
                     </p>
-                  </div>
                 </div>
               </div>
             </FadeIn>
-
             <FadeIn delay={0.12}>
               <div className="w-full">
                 <form
@@ -641,7 +673,6 @@ export default function DansantanWebsite() {
                       ) : null}
                     </div>
                   </div>
-
                   <div className="mt-5 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
                     <div className="text-xs text-black/60">
                       By submitting, you agree we may contact you regarding this enquiry.
@@ -654,7 +685,6 @@ export default function DansantanWebsite() {
                       Send enquiry <ArrowRight className="ml-2 h-4 w-4" />
                     </button>
                   </div>
-
                   {submitted ? (
                     <div className="mt-4 rounded-xl border border-black/10 bg-white p-3 text-sm text-black/70">
                       If your email app didn’t open, please email <span className="font-medium">therealmariov1@gmail.com</span>.
@@ -666,7 +696,6 @@ export default function DansantanWebsite() {
           </div>
         </div>
       </section>
-
       {/* Footer */}
       <footer className="border-t border-black/5">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-10 text-sm text-black/60 sm:px-6 sm:flex-row sm:items-center sm:justify-between">
