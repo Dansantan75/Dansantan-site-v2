@@ -519,183 +519,161 @@ export default function DansantanWebsite() {
         </div>
       </section>
       {/* Contact */}
-      <section id="contact" className="border-t border-black/5">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-          <FadeIn>
-            <SectionTitle
-              kicker="Contact"
-              title="Let’s talk"
-              subtitle="Send a note and we’ll come back with a recommended next step."
-            />
-          </FadeIn>
-          <div className="mt-10 grid gap-6 lg:grid-cols-2">
-  <FadeIn delay={0.08}>
-    <div className="rounded-2xl border border-black/10 bg-white/70 p-6 shadow-sm backdrop-blur">
-      <h3 className="text-base font-semibold">Details</h3>
+      {/* CONTACT */}
+<section id="contact" className="border-t border-black/5">
+  <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+    <FadeIn>
+      <SectionTitle
+        kicker="Contact"
+        title="Let’s talk"
+        subtitle="Send a note and we’ll come back with a recommended next step."
+      />
+    </FadeIn>
 
-      <div className="mt-4 space-y-3 text-sm text-black/70">
-        <div className="flex items-start gap-3">
-          <Mail className="mt-0.5 h-4 w-4 text-black/40" />
-          <div>
-            <div className="font-medium text-black">Email</div>
-            <div className="text-black/70">dansantancompany@gmail.com</div>
-          </div>
-        </div>
+    <div className="mt-10 grid gap-6 lg:grid-cols-2">
+      {/* LEFT: Details */}
+      <FadeIn delay={0.08}>
+        <div className="rounded-2xl border border-black/10 bg-white/70 p-6 shadow-sm backdrop-blur">
+          <h3 className="text-base font-semibold">Details</h3>
 
-        <div className="flex items-start gap-3">
-          <Phone className="mt-0.5 h-4 w-4 text-black/40" />
-          <div>
-            <div className="font-medium text-black">Phone</div>
-            <div className="text-black/70">+27 (0)00 000 0000</div>
-          </div>
-        </div>
-
-        <div className="flex items-start gap-3">
-          <MapPin className="mt-0.5 h-4 w-4 text-black/40" />
-          <div>
-            <div className="font-medium text-black">Location</div>
-            <div className="text-black/70">South Africa</div>
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-6 rounded-2xl border border-black/10 bg-white p-5">
-        <div className="text-xs font-semibold text-black/60">Prefer WhatsApp?</div>
-        <p className="mt-2 text-sm text-black/70">
-          Add your number in the form and we’ll reply with a convenient time.
-        </p>
-      </div>
-    </div>
-  </FadeIn>
-
-  <FadeIn delay={0.12}>
-    <div className="w-full">
-      {/* your <form> ... </form> stays here */}
-    </div>
-  </FadeIn>
-
-                <div className="rounded-2xl border border-black/10 bg-white/70 p-6 shadow-sm backdrop-blur">
-                  <h3 className="text-base font-semibold">Details</h3>
-                  <div className="mt-4 space-y-3 text-sm text-black/70">
-                    <div className="flex items-start gap-3">
-                      <Mail className="mt-0.5 h-4 w-4 text-black/40" />
-                      <div>
-                        <div className="font-medium text-black">Email</div>
-                        <div className="text-black/70">dansantancompany@gmail.com</div>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <Phone className="mt-0.5 h-4 w-4 text-black/40" />
-                      <div>
-                        <div className="font-medium text-black">Phone</div>
-                        <div className="text-black/70">+27 (0)00 000 0000</div>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <MapPin className="mt-0.5 h-4 w-4 text-black/40" />
-                      <div>
-                        <div className="font-medium text-black">Location</div>
-                        <div className="text-black/70">South Africa</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mt-6 rounded-2xl border border-black/10 bg-white p-5">
-                    <div className="text-xs font-semibold text-black/60">Prefer WhatsApp?</div>
-                    <p className="mt-2 text-sm text-black/70">
-                      Add your number in the form and we’ll reply with a convenient time.
-                    </p>
-                </div>
+          <div className="mt-4 space-y-3 text-sm text-black/70">
+            <div className="flex items-start gap-3">
+              <Mail className="mt-0.5 h-4 w-4 text-black/40" />
+              <div>
+                <div className="font-medium text-black">Email</div>
+                <div className="text-black/70">dansantancompany@gmail.com</div>
               </div>
-            </FadeIn>
-            <FadeIn delay={0.12}>
-              <div className="w-full">
-                <form
-                  action="https://formspree.io/f/meeqvwwp"
-                  method="POST"
-                  className="rounded-2xl border border-black/10 bg-white/70 p-6 shadow-sm backdrop-blur"
-                >
-                  <input type="hidden" name="_subject" value="New DANSANTAN website enquiry" />
-                  <input type="hidden" name="_template" value="table" />
-                  <input type="hidden" name="_replyto" value={form.email} />
-                  <input type="hidden" name="_captcha" value="false" />
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <div>
-                      <label className="text-xs font-medium text-black/70">Name</label>
-                      <input
-                        name="name"
-                        value={form.name}
-                        onChange={(e) => setForm((s) => ({ ...s, name: e.target.value }))}
-                        onBlur={() => setTouched((t) => ({ ...t, name: true }))}
-                        className="mt-1 w-full rounded-xl border border-black/10 bg-white px-3 py-2 text-sm outline-none ring-0 focus:border-black/30"
-                        placeholder="Your name"
-                      />
-                      {touched.name && errors.name ? (
-                        <div className="mt-1 text-xs text-black/60">{errors.name}</div>
-                      ) : null}
-                    </div>
-                    <div>
-                      <label className="text-xs font-medium text-black/70">Email</label>
-                      <input
-                        name="email"
-                        value={form.email}
-                        onChange={(e) => setForm((s) => ({ ...s, email: e.target.value }))}
-                        onBlur={() => setTouched((t) => ({ ...t, email: true }))}
-                        className="mt-1 w-full rounded-xl border border-black/10 bg-white px-3 py-2 text-sm outline-none ring-0 focus:border-black/30"
-                        placeholder="you@company.com"
-                      />
-                      {touched.email && errors.email ? (
-                        <div className="mt-1 text-xs text-black/60">{errors.email}</div>
-                      ) : null}
-                    </div>
-                    <div className="sm:col-span-2">
-                      <label className="text-xs font-medium text-black/70">Phone / WhatsApp (optional)</label>
-                      <input
-                        name="phone"
-                        value={form.phone}
-                        onChange={(e) => setForm((s) => ({ ...s, phone: e.target.value }))}
-                        className="mt-1 w-full rounded-xl border border-black/10 bg-white px-3 py-2 text-sm outline-none ring-0 focus:border-black/30"
-                        placeholder="+27 ..."
-                      />
-                    </div>
-                    <div className="sm:col-span-2">
-                      <label className="text-xs font-medium text-black/70">Message</label>
-                      <textarea
-                        name="message"
-                        value={form.message}
-                        onChange={(e) => setForm((s) => ({ ...s, message: e.target.value }))}
-                        onBlur={() => setTouched((t) => ({ ...t, message: true }))}
-                        rows={5}
-                        className="mt-1 w-full resize-none rounded-xl border border-black/10 bg-white px-3 py-2 text-sm outline-none ring-0 focus:border-black/30"
-                        placeholder="Tell us a bit about your business and what you want to improve."
-                      />
-                      {touched.message && errors.message ? (
-                        <div className="mt-1 text-xs text-black/60">{errors.message}</div>
-                      ) : null}
-                    </div>
-                  </div>
-                  <div className="mt-5 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
-                    <div className="text-xs text-black/60">
-                      By submitting, you agree we may contact you regarding this enquiry.
-                    </div>
-                    <button
-                      type="submit"
-                      className="inline-flex items-center justify-center rounded-2xl bg-black px-5 py-3 text-sm font-medium text-white shadow-sm disabled:opacity-50"
-                      disabled={!canSubmit}
-                    >
-                      Send enquiry <ArrowRight className="ml-2 h-4 w-4" />
-                    </button>
-                  </div>
-                  {submitted ? (
-                    <div className="mt-4 rounded-xl border border-black/10 bg-white p-3 text-sm text-black/70">
-                      If your email app didn’t open, please email <span className="font-medium">therealmariov1@gmail.com</span>.
-                    </div>
-                  ) : null}
-                </form>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <Phone className="mt-0.5 h-4 w-4 text-black/40" />
+              <div>
+                <div className="font-medium text-black">Phone</div>
+                <div className="text-black/70">+27 (0)00 000 0000</div>
               </div>
-            </FadeIn>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <MapPin className="mt-0.5 h-4 w-4 text-black/40" />
+              <div>
+                <div className="font-medium text-black">Location</div>
+                <div className="text-black/70">South Africa</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 rounded-2xl border border-black/10 bg-white p-5">
+            <div className="text-xs font-semibold text-black/60">Prefer WhatsApp?</div>
+            <p className="mt-2 text-sm text-black/70">
+              Add your number in the form and we’ll reply with a convenient time.
+            </p>
           </div>
         </div>
-      </section>
+      </FadeIn>
+
+      {/* RIGHT: Form */}
+      <FadeIn delay={0.12}>
+        <div className="w-full">
+          <form
+            action="https://formspree.io/f/meeqvwwp"
+            method="POST"
+            className="rounded-2xl border border-black/10 bg-white/70 p-6 shadow-sm backdrop-blur"
+          >
+            <input type="hidden" name="_subject" value="New DANSANTAN website enquiry" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label className="text-xs font-medium text-black/70">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={form.name}
+                  onChange={(e) => setForm((s) => ({ ...s, name: e.target.value }))}
+                  onBlur={() => setTouched((t) => ({ ...t, name: true }))}
+                  className="mt-1 w-full rounded-xl border border-black/10 bg-white px-3 py-2 text-sm outline-none ring-0 focus:border-black/30"
+                  placeholder="Your name"
+                />
+                {touched.name && errors.name ? (
+                  <div className="mt-1 text-xs text-black/60">{errors.name}</div>
+                ) : null}
+              </div>
+
+              <div>
+                <label className="text-xs font-medium text-black/70">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={(e) => setForm((s) => ({ ...s, email: e.target.value }))}
+                  onBlur={() => setTouched((t) => ({ ...t, email: true }))}
+                  className="mt-1 w-full rounded-xl border border-black/10 bg-white px-3 py-2 text-sm outline-none ring-0 focus:border-black/30"
+                  placeholder="you@company.com"
+                />
+                {touched.email && errors.email ? (
+                  <div className="mt-1 text-xs text-black/60">{errors.email}</div>
+                ) : null}
+              </div>
+
+              <div className="sm:col-span-2">
+                <label className="text-xs font-medium text-black/70">
+                  Phone / WhatsApp (optional)
+                </label>
+                <input
+                  type="text"
+                  name="phone"
+                  value={form.phone}
+                  onChange={(e) => setForm((s) => ({ ...s, phone: e.target.value }))}
+                  className="mt-1 w-full rounded-xl border border-black/10 bg-white px-3 py-2 text-sm outline-none ring-0 focus:border-black/30"
+                  placeholder="+27 ..."
+                />
+              </div>
+
+              <div className="sm:col-span-2">
+                <label className="text-xs font-medium text-black/70">Message</label>
+                <textarea
+                  name="message"
+                  value={form.message}
+                  onChange={(e) => setForm((s) => ({ ...s, message: e.target.value }))}
+                  onBlur={() => setTouched((t) => ({ ...t, message: true }))}
+                  rows={6}
+                  className="mt-1 w-full resize-none rounded-xl border border-black/10 bg-white px-3 py-2 text-sm outline-none ring-0 focus:border-black/30"
+                  placeholder="Tell us a bit about your business and what you want to improve."
+                />
+                {touched.message && errors.message ? (
+                  <div className="mt-1 text-xs text-black/60">{errors.message}</div>
+                ) : null}
+              </div>
+            </div>
+
+            <div className="mt-5 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
+              <div className="text-xs text-black/60">
+                By submitting, you agree we may contact you regarding this enquiry.
+              </div>
+
+              <button
+                type="submit"
+                className="inline-flex items-center justify-center rounded-2xl bg-black px-5 py-3 text-sm font-medium text-white shadow-sm disabled:opacity-50"
+                disabled={!canSubmit}
+              >
+                Send enquiry <ArrowRight className="ml-2 h-4 w-4" />
+              </button>
+            </div>
+
+            {submitted ? (
+              <div className="mt-4 rounded-xl border border-black/10 bg-white p-3 text-sm text-black/70">
+                If your email app didn’t open, please email{" "}
+                <span className="font-medium">therealmariov1@gmail.com</span>.
+              </div>
+            ) : null}
+          </form>
+        </div>
+      </FadeIn>
+    </div>
+  </div>
+</section>
+      
       {/* Footer */}
       <footer className="border-t border-black/5">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-10 text-sm text-black/60 sm:px-6 sm:flex-row sm:items-center sm:justify-between">
