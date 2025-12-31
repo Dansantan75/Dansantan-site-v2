@@ -573,7 +573,7 @@ export default function DansantanWebsite() {
       {/* your <form> ... </form> stays here */}
     </div>
   </FadeIn>
-</div>
+
                 <div className="rounded-2xl border border-black/10 bg-white/70 p-6 shadow-sm backdrop-blur">
                   <h3 className="text-base font-semibold">Details</h3>
                   <div className="mt-4 space-y-3 text-sm text-black/70">
