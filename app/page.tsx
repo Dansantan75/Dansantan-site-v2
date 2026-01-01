@@ -169,8 +169,7 @@ export default function DansantanWebsite() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
           <a href="#" className="flex items-center gap-2">
             <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-black/10 bg-white shadow-sm overflow-hidden">
-              {/* Place your logo file at /public/logo.png */}
-              <img src="/logo.png" alt="DANSANTAN" className="h-full w-full object-cover" />
+              <img src="/logo.svg" alt="DANSANTAN logo" className="h-full w-full object-cover" />
             </div>
             <div className="leading-tight">
               <div className="text-sm font-semibold tracking-tight">DANSANTAN</div>
