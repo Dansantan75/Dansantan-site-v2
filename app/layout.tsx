@@ -1,11 +1,12 @@
 import './globals.css';
 
+import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
 
-export const metadata = {
-  title: 'Next.js App Router + NextAuth + Tailwind CSS',
+export const metadata: Metadata = {
+  title: 'DANSANTAN | Franchise investments & operator advisory',
   description:
-    'A user admin dashboard configured with Next.js, Postgres, NextAuth, Tailwind CSS, TypeScript, and Prettier.'
+    'A focused landing page for DANSANTAN that highlights franchise holdings, operator advisory services, outcomes, and a streamlined contact path.'
 };
 
 export default function RootLayout({
