@@ -555,7 +555,7 @@ export default function DansantanWebsite() {
         </div>
       </section>
 
-           {/* Contact */}
+      {/* Contact */}
       <section id="contact" className="border-t border-black/5">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <FadeIn>
@@ -756,7 +756,7 @@ export default function DansantanWebsite() {
             </FadeIn>
           </div>
         </div>
-      </section>     
+      </section>
 
       {/* Footer */}
       <footer className="border-t border-black/5">
