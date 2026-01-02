@@ -757,7 +757,7 @@ export default function DansantanWebsite() {
           </div>
         </div>
       </section>
-
+      
       {/* Footer */}
       <footer className="border-t border-black/5">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-10 text-sm text-black/60 sm:px-6 sm:flex-row sm:items-center sm:justify-between">
