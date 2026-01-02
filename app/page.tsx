@@ -18,7 +18,7 @@ import {
 // Single-file, production-ready landing page for DANSANTAN
 // Styling: Tailwind (available by default). No external assets required.
 
-const FadeIn = ({ children, delay = 0, className = ""}: { children: React.ReactNode; delay?: number; className?: string; }) => (
+const FadeIn = ({ children, delay = 0, className = "",}: { children: React.ReactNode; delay?: number; className?: string; }) => (
   <motion.div
     className={className}
     initial={{ opacity: 0, y: 14 }}
@@ -165,16 +165,16 @@ export default function DansantanWebsite() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-white to-black/[0.03] text-black">
       {/* Top bar */}
-      <header className="sticky top-0 z-40 border-b border-black/5 bg-white/70 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-          <a href="#" className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-black/10 bg-white shadow-sm overflow-hidden">
-              <img src="/logo.png" alt="DANSANTAN logo" className="h-full w-full object-cover" />
-            </div>
-            <div className="leading-tight">
-              <div className="text-sm font-semibold tracking-tight">DANSANTAN</div>
-              <div className="text-[11px] text-black/60">Holding company • Franchise investments • Advisory</div>
-            </div>
+          <header className="sticky top-0 z-40 border-b border-black/5 bg-white/70 backdrop-blur">
+            <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
+              <a href="#" className="flex items-center gap-2">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-black/10 bg-white shadow-sm overflow-hidden">
+                  <img src="/logo.svg" alt="DANSANTAN logo" className="h-full w-full object-cover" />
+                </div>
+                <div className="leading-tight">
+                  <div className="text-sm font-semibold tracking-tight">DANSANTAN</div>
+                  <div className="text-[11px] text-black/60">Holding company • Franchise investments • Advisory</div>
+                </div>
           </a>
           <nav className="hidden items-center gap-6 text-sm text-black/70 sm:flex">
             {nav.map((n) => (
@@ -185,8 +185,10 @@ export default function DansantanWebsite() {
           </nav>
           <div className="flex items-center gap-2">
             <a
-              href="#contact"
+              href="https://wa.me/27824988638?text=Hi%2C%20I%20would%20like%20to%20book%20a%2020-min%20call."
               className="inline-flex items-center justify-center rounded-xl border border-black/10 bg-black px-4 py-2 text-sm font-medium text-white shadow-sm hover:opacity-95"
+              target="_blank"
+              rel="noreferrer"
             >
               Book a call <ArrowRight className="ml-2 h-4 w-4" />
             </a>
@@ -200,28 +202,36 @@ export default function DansantanWebsite() {
           <div className="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-black/[0.06] blur-3xl" />
           <div className="absolute -bottom-24 right-[-40px] h-72 w-72 rounded-full bg-black/[0.05] blur-3xl" />
         </div>
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-5">
+          <img
+            src="/logo.png"
+            alt="DANSANTAN watermark"
+            className="max-h-[520px] max-w-[520px] object-contain blur-[0.5px]"
+            aria-hidden="true"
+          />
+        </div>
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <FadeIn>
             <div className="mx-auto max-w-3xl text-center">
               <div className="mb-4 flex flex-wrap items-center justify-center gap-2">
                 <Pill>Franchise investments</Pill>
+                <Pill>Angel investor</Pill>
                 <Pill>Operator advisory</Pill>
-                <Pill>Cash flow discipline</Pill>
               </div>
               <h1 className="text-3xl font-semibold tracking-tight sm:text-5xl">
-                A holding company for franchise investments — with a hands-on operator advisory arm.
+                A holding company built in franchising — with an operator’s advisory arm.
               </h1>
               <p className="mt-5 text-sm leading-6 text-black/70 sm:text-base">
-                DANSANTAN is the holding company behind a portfolio of franchise investments. We also provide practical,
-                experience-based advisory to franchisees and owner-managed businesses — focused on cash flow, unit economics,
-                people systems, and store-level execution.
+                I’m not a career consultant. I’m an operator who’s spent decades inside franchise businesses — where stock,
+                margin, people and cash flow decide who survives. DANSANTAN backs franchise investments and helps franchisees
+                build control: clean numbers, tight systems, and execution that holds up under pressure.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <a
                   href="#contact"
                   className="inline-flex w-full items-center justify-center rounded-2xl bg-black px-5 py-3 text-sm font-medium text-white shadow-sm hover:opacity-95 sm:w-auto"
                 >
-                  Get an assessment <ArrowRight className="ml-2 h-4 w-4" />
+                  Get a benchmark <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
                 <a
                   href="#services"
@@ -234,15 +244,27 @@ export default function DansantanWebsite() {
           </FadeIn>
 
           <div className="mt-12 grid gap-4 sm:grid-cols-3">
-            <FadeIn delay={0.05}>
-              <Stat label="Focus" value="Owner returns + cash discipline" />
-            </FadeIn>
-            <FadeIn delay={0.1}>
-              <Stat label="Style" value="Lean systems + accountability" />
-            </FadeIn>
-            <FadeIn delay={0.15}>
-              <Stat label="Output" value="Measurable KPIs + governance" />
-            </FadeIn>
+            {[
+              {
+                title: "Owner returns + cash discipline",
+                body: "Not “more sales” — more cash that actually lands."
+              },
+              {
+                title: "Lean systems + accountability",
+                body: "Simple routines your managers can run without you."
+              },
+              {
+                title: "Measurable KPIs + governance",
+                body: "Scorecards that catch problems early — before the bank does."
+              }
+            ].map((item, idx) => (
+              <FadeIn key={item.title} delay={0.05 * (idx + 1)}>
+                <div className="rounded-2xl border border-black/10 bg-white/70 p-5 text-left shadow-sm backdrop-blur">
+                  <h3 className="text-base font-semibold text-black">{item.title}</h3>
+                  <p className="mt-2 text-sm text-black/70">{item.body}</p>
+                </div>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
@@ -272,6 +294,12 @@ export default function DansantanWebsite() {
             <FadeIn delay={0.15}>
               <Card title="ULTRA Liquors" icon={<Coins className="h-5 w-5" />}>
                 Liquor retail focused on stock flow, margin control, compliance, and cash conversion.
+              </Card>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <Card title="SPAR (Legacy / Prior)" icon={<ClipboardCheck className="h-5 w-5" />}>
+                Former SPAR franchise operator. Guild Chairman experience and Managing Director exposure across
+                distribution-centre operations — where margin, stock flow, and discipline are non-negotiable.
               </Card>
             </FadeIn>
           </div>
@@ -309,41 +337,54 @@ export default function DansantanWebsite() {
           </FadeIn>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <FadeIn delay={0.05}>
-              <Card title="Cash Flow & Controls" icon={<Coins className="h-5 w-5" />}>
-                Tighten payments, stock flow, and daily disciplines. Build a simple control framework that reduces
-                leakage and surprises.
-              </Card>
-            </FadeIn>
-            <FadeIn delay={0.1}>
-              <Card title="Unit Economics Review" icon={<BarChart3 className="h-5 w-5" />}>
-                Understand your store-level profitability drivers. Identify the 20% changes that move EBITDA and
-                owner return.
-              </Card>
-            </FadeIn>
-            <FadeIn delay={0.15}>
-              <Card title="Operations & SOPs" icon={<ClipboardCheck className="h-5 w-5" />}>
-                Convert tribal knowledge into repeatable execution: checklists, shift routines, stock counts,
-                wastage, and service standards.
-              </Card>
-            </FadeIn>
-            <FadeIn delay={0.2}>
-              <Card title="Leadership & People Systems" icon={<Users className="h-5 w-5" />}>
-                Coaching for managers on accountability, motivation, discipline, and culture — with practical tools
-                and measurable expectations.
-              </Card>
-            </FadeIn>
-            <FadeIn delay={0.25}>
-              <Card title="Turnaround / 90-Day Plan" icon={<LineChart className="h-5 w-5" />}>
-                A structured sprint: diagnose, prioritise, execute. Weekly scorecards, site visits or calls, and
-                owner-level decision support.
-              </Card>
-            </FadeIn>
-            <FadeIn delay={0.3}>
-              <Card title="Governance & Compliance" icon={<ShieldCheck className="h-5 w-5" />}>
-                Simple, usable policies and routines that keep you compliant (without slowing the business).
-              </Card>
-            </FadeIn>
+            {[
+              {
+                title: "Cash Flow & Controls",
+                icon: <Coins className="h-5 w-5" />,
+                body: "Daily discipline around payables, cash buffers, and approvals that stop leakage."
+              },
+              {
+                title: "Stock + Margin Control (Operator Grade)",
+                icon: <BarChart3 className="h-5 w-5" />,
+                body: "Ordering, par levels, variance management, and guardrails for margin and shrink."
+              },
+              {
+                title: "Unit Economics Review",
+                icon: <LineChart className="h-5 w-5" />,
+                body: "Identify the 20% of levers that move EBITDA, cash conversion, and owner return."
+              },
+              {
+                title: "Operations & SOPs",
+                icon: <ClipboardCheck className="h-5 w-5" />,
+                body: "Runbooks, checklists, shift routines, and controls managers can actually follow."
+              },
+              {
+                title: "Leadership & People Systems",
+                icon: <Users className="h-5 w-5" />,
+                body: "Accountability, coaching, and performance rhythms that don’t need you in the store."
+              },
+              {
+                title: "90-Day Turnaround Sprint",
+                icon: <LineChart className="h-5 w-5" />,
+                body: "Diagnose, prioritise, execute. Weekly scorecards, owner-level decision support, and field time."
+              },
+              {
+                title: "Franchisee–Franchisor Translation (optional)",
+                icon: <ShieldCheck className="h-5 w-5" />,
+                body: "Bridge expectations, data, and reality between the franchisor playbook and store constraints."
+              },
+              {
+                title: "Governance & Compliance (Practical)",
+                icon: <ShieldCheck className="h-5 w-5" />,
+                body: "Simple policies and controls that keep you compliant without slowing the operation."
+              }
+            ].map((item, idx) => (
+              <FadeIn key={item.title} delay={0.05 * (idx + 1)}>
+                <Card title={item.title} icon={item.icon}>
+                  {item.body}
+                </Card>
+              </FadeIn>
+            ))}
           </div>
 
           <FadeIn delay={0.35}>
@@ -447,9 +488,9 @@ export default function DansantanWebsite() {
                 <h3 className="text-base font-semibold">Financial clarity</h3>
                 <ul className="mt-4 space-y-2 text-sm text-black/70">
                   {[
-                    "Clean view of true gross margin and contribution",
-                    "Cash flow rhythm: payments, creditors, and buffers",
-                    "Spend discipline and approvals",
+                    "True gross margin + contribution (not “paper GP”)",
+                    "A cash flow rhythm: payments, creditors, buffers",
+                    "Spend discipline: approvals + thresholds",
                   ].map((p) => (
                     <li key={p} className="flex gap-2">
                       <CheckCircle2 className="mt-0.5 h-4 w-4 text-black/40" />
@@ -464,8 +505,8 @@ export default function DansantanWebsite() {
                 <h3 className="text-base font-semibold">Operational control</h3>
                 <ul className="mt-4 space-y-2 text-sm text-black/70">
                   {[
-                    "Stock counts that actually reconcile",
-                    "Reduced wastage and variances",
+                    "Stock counts that reconcile (and variance that gets managed)",
+                    "Reduced wastage, tighter ordering, cleaner par levels",
                     "Better rosters, better service, fewer fires",
                   ].map((p) => (
                     <li key={p} className="flex gap-2">
@@ -507,39 +548,28 @@ export default function DansantanWebsite() {
               <FadeIn>
                 <SectionTitle
                   kicker="About DANSANTAN"
-                  title="Operator-led, not theory-led"
-                  subtitle="We work best with founders and managers who are ready to execute."
+                  title="Operator-led. Numbers-first. People-aware."
+                  subtitle="DANSANTAN started as a holding company in franchising. The advisory arm closes the gap between franchisor theory and franchisee reality: stock, margin, cash flow, systems, sustainability."
                 />
               </FadeIn>
             </div>
             <div className="lg:col-span-3">
               <FadeIn delay={0.08}>
                 <div className="rounded-2xl border border-black/10 bg-white/70 p-6 shadow-sm backdrop-blur">
-                  <p className="text-sm leading-6 text-black/70">
-                    DANSANTAN is a holding company behind franchise investments (VIDA, BOOTLEGGER, and ULTRA) with a small,
-                    hands-on advisory arm. The work is practical: unit economics, cash flow controls, store-level operations,
-                    and leadership systems that hold up under pressure.
+                  <p className="text-sm leading-6 text-black/70 space-y-3">
+                    DANSANTAN backs franchise investments and works with franchisees who want operator-grade control.
+                    The work is grounded in stores: cleaner numbers, margin guardrails, disciplined stock flow,
+                    people systems, and execution that survives pressure. I translate between franchisor expectations
+                    and franchisee realities so the store can perform without the owner on site.
                   </p>
-                  <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                    {[
-                      "Experience-based mentorship",
-                      "KPIs that managers can actually use",
-                      "Strong focus on cash discipline",
-                      "Lean systems, simple routines",
-                    ].map((t) => (
-                      <div key={t} className="flex items-start gap-2 text-sm text-black/70">
-                        <CheckCircle2 className="mt-0.5 h-4 w-4 text-black/40" />
-                        <span>{t}</span>
-                      </div>
-                    ))}
-                  </div>
                   <div className="mt-6 rounded-2xl border border-black/10 bg-white p-5">
                     <div className="text-xs font-semibold text-black/60">Good fit if you want:</div>
                     <div className="mt-3 grid gap-2 text-sm text-black/70">
                       {[
-                        "A clear plan you can execute this week",
-                        "Accountability that sticks",
-                        "Better cash flow visibility and fewer surprises",
+                        "Clean, operator-ready numbers and guardrails",
+                        "Systems your managers can run without you",
+                        "KPIs and scorecards that surface problems early",
+                        "A franchisor–franchisee translator in your corner",
                       ].map((p) => (
                         <div key={p} className="flex gap-2">
                           <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-black/40" />
@@ -551,6 +581,63 @@ export default function DansantanWebsite() {
                 </div>
               </FadeIn>
             </div>
+          </div>
+        </div>
+      </section>
+      {/* Earned opinions */}
+      <section className="border-t border-black/5 bg-white/60">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              "“GP is the invitation. Cash flow is the commitment.”",
+              "“Franchisors think the customer is the consumer. Operators learn the franchisee is the first customer.”"
+            ].map((quote, idx) => (
+              <FadeIn key={quote} delay={0.06 * idx}>
+                <div className="rounded-2xl border border-black/10 bg-white p-5 text-sm font-medium text-black/80 shadow-sm backdrop-blur">
+                  {quote}
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Latest thinking */}
+      <section className="border-t border-black/5">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+          <FadeIn>
+            <SectionTitle
+              kicker="Latest thinking (from the operator’s desk)"
+              title="Insights you can download"
+              subtitle="Short operator notes you can share with teams and partners."
+            />
+          </FadeIn>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2">
+            {[
+              {
+                title: "GP is the invitation. Cash flow is the commitment.",
+                image: "/images/cashflow-vs-gp.png",
+                href: "/insights/gp-is-the-invitation.docx"
+              },
+              {
+                title: "Franchising has a customer problem (and it’s not the one you think).",
+                image: "/images/whose-customer.png",
+                href: "/insights/whose-customer-is-whose.docx"
+              }
+            ].map((post, idx) => (
+              <FadeIn key={post.title} delay={0.06 * idx}>
+                <a
+                  href={post.href}
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-black/10 bg-white/70 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:shadow-md"
+                  download
+                >
+                  <div className="relative h-40 w-full overflow-hidden bg-black/5">
+                    <img src={post.image} alt={post.title} className="h-full w-full object-contain" />
+                  </div>
+                  <div className="p-4 text-sm font-semibold text-black group-hover:text-black/80">{post.title}</div>
+                </a>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
@@ -757,7 +844,7 @@ export default function DansantanWebsite() {
           </div>
         </div>
       </section>
-      
+
       {/* Footer */}
       <footer className="border-t border-black/5">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-10 text-sm text-black/60 sm:px-6 sm:flex-row sm:items-center sm:justify-between">
