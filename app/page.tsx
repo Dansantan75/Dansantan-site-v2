@@ -13,6 +13,8 @@ import {
   Phone,
   MapPin,
   CheckCircle2,
+  Menu,
+  X
 } from "lucide-react";
 
 // Single-file, production-ready landing page for DANSANTAN
@@ -92,6 +94,7 @@ export default function DansantanWebsite() {
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [submissionState, setSubmissionState] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [submissionError, setSubmissionError] = useState("");
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const errors = useMemo(() => {
     const e: Record<string, string> = {};
@@ -153,30 +156,41 @@ export default function DansantanWebsite() {
     }
   };
 
+  const whatsappMessage =
+    "Hi Mario, I’m on the DANSANTAN site. I’d like to start a conversation about my business. We’re struggling with ____";
+  const whatsappLink = `https://wa.me/27824988638?text=${encodeURIComponent(whatsappMessage)}`;
+
   const nav = [
+    { label: "About", href: "#about" },
     { label: "Portfolio", href: "#portfolio" },
     { label: "Services", href: "#services" },
     { label: "Approach", href: "#approach" },
     { label: "Outcomes", href: "#outcomes" },
-    { label: "About", href: "#about" },
+    { label: "Insights", href: "#insights" },
     { label: "Contact", href: "#contact" },
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-white to-black/[0.03] text-black">
       {/* Top bar */}
-          <header className="sticky top-0 z-40 border-b border-black/5 bg-white/70 backdrop-blur">
-            <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-              <a href="#" className="flex items-center gap-2">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-black/10 bg-white shadow-sm overflow-hidden">
-                  <img src="/logo.png" alt="DANSANTAN logo" className="h-full w-full object-cover" />
-                </div>
-                <div className="leading-tight">
-                  <div className="text-sm font-semibold tracking-tight">DANSANTAN</div>
-                  <div className="text-[11px] text-black/60">Holding company • Franchise investments • Advisory</div>
-                </div>
+      <header className="sticky top-0 z-40 border-b border-black/5 bg-white/80 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
+          <a href="#" className="flex items-center gap-3">
+            <div className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl border border-black/10 bg-white shadow-sm">
+              <img src="/logo.png" alt="DANSANTAN logo" className="h-full w-full object-cover" />
+            </div>
+            <div className="leading-tight">
+              <div className="text-sm font-semibold tracking-tight">DANSANTAN</div>
+              <div className="flex items-center gap-2 text-[11px] font-semibold text-black/60">
+                <span>PEOPLE</span>
+                <span className="h-3 w-px bg-black/20" />
+                <span>PURPOSE</span>
+                <span className="h-3 w-px bg-black/20" />
+                <span>PERFORMANCE</span>
+              </div>
+            </div>
           </a>
-          <nav className="hidden items-center gap-6 text-sm text-black/70 sm:flex">
+          <nav className="hidden items-center gap-6 text-sm text-black/70 md:flex">
             {nav.map((n) => (
               <a key={n.href} href={n.href} className="hover:text-black">
                 {n.label}
@@ -185,15 +199,49 @@ export default function DansantanWebsite() {
           </nav>
           <div className="flex items-center gap-2">
             <a
-              href="https://wa.me/27824988638?text=Hi%2C%20I%20would%20like%20to%20book%20a%2020-min%20call."
-              className="inline-flex items-center justify-center rounded-xl border border-black/10 bg-black px-4 py-2 text-sm font-medium text-white shadow-sm hover:opacity-95"
+              href={whatsappLink}
+              className="inline-flex items-center justify-center rounded-xl border border-[#128C7E] bg-[#25D366] px-4 py-2 text-sm font-semibold text-black shadow-sm transition hover:brightness-95"
               target="_blank"
               rel="noreferrer"
             >
-              Book a call <ArrowRight className="ml-2 h-4 w-4" />
+              Start a Conversation <ArrowRight className="ml-2 h-4 w-4" />
             </a>
+            <button
+              type="button"
+              className="inline-flex items-center justify-center rounded-xl border border-black/10 bg-white p-2 text-black shadow-sm md:hidden"
+              onClick={() => setMobileOpen((o) => !o)}
+              aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
+            >
+              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
           </div>
         </div>
+        {mobileOpen ? (
+          <div className="border-t border-black/5 bg-white/90 backdrop-blur md:hidden">
+            <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6">
+              <div className="grid gap-3 text-sm text-black/80">
+                {nav.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-xl border border-black/10 bg-white px-3 py-2 shadow-sm"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center rounded-xl border border-[#128C7E] bg-[#25D366] px-3 py-2 font-semibold text-black shadow-sm"
+                >
+                  Start a Conversation
+                </a>
+              </div>
+            </div>
+          </div>
+        ) : null}
       </header>
 
       {/* Hero */}
@@ -219,19 +267,19 @@ export default function DansantanWebsite() {
                 <Pill>Operator advisory</Pill>
               </div>
               <h1 className="text-3xl font-semibold tracking-tight sm:text-5xl">
-                A holding company built in franchising — with an operator’s advisory arm.
+                Strategy doesn’t fail. Execution does.
               </h1>
               <p className="mt-5 text-sm leading-6 text-black/70 sm:text-base">
-                I’m not a career consultant. I’m an operator who’s spent decades inside franchise businesses — where stock,
-                margin, people and cash flow decide who survives. DANSANTAN backs franchise investments and helps franchisees
-                build control: clean numbers, tight systems, and execution that holds up under pressure.
+                DANSANTAN is an operator-led holding company built in franchising. We back portfolio brands and work with
+                franchisees to translate strategy into store-level execution: people, purpose, performance — with numbers
+                that hold up under pressure.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <a
-                  href="#contact"
-                  className="inline-flex w-full items-center justify-center rounded-2xl bg-black px-5 py-3 text-sm font-medium text-white shadow-sm hover:opacity-95 sm:w-auto"
+                  href="/sanity-check"
+                  className="inline-flex w-full items-center justify-center rounded-2xl bg-black px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:opacity-95 sm:w-auto"
                 >
-                  Get a benchmark <ArrowRight className="ml-2 h-4 w-4" />
+                  Run a Sanity Check <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
                 <a
                   href="#services"
@@ -282,46 +330,55 @@ export default function DansantanWebsite() {
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <FadeIn delay={0.05}>
-              <Card title="VIDA e Caffè" icon={<BarChart3 className="h-5 w-5" />}>
-                Coffee retail with a focus on unit economics, consistency, and store-level execution.
+              <Card
+                title="VIDA e Caffè"
+                icon={
+                  <div className="flex h-10 w-16 items-center justify-center rounded-lg bg-[#e4002b] text-xs font-semibold text-white">
+                    VIDA
+                  </div>
+                }
+              >
+                Coffee retail with a focus on unit economics, rhythm, and store-level execution.
               </Card>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <Card title="BOOTLEGGER" icon={<LineChart className="h-5 w-5" />}>
+              <Card
+                title="BOOTLEGGER"
+                icon={
+                  <div className="flex h-10 w-24 items-center justify-center rounded-lg bg-black text-xs font-semibold text-white">
+                    BOOTLEGGER
+                  </div>
+                }
+              >
                 Premium café operations built on experience, service rhythm, and disciplined controls.
               </Card>
             </FadeIn>
             <FadeIn delay={0.15}>
-              <Card title="ULTRA Liquors" icon={<Coins className="h-5 w-5" />}>
+              <Card
+                title="ULTRA Liquors"
+                icon={
+                  <div className="flex h-10 w-20 items-center justify-center rounded-lg bg-[#0d3b66] text-xs font-semibold text-white">
+                    ULTRA
+                  </div>
+                }
+              >
                 Liquor retail focused on stock flow, margin control, compliance, and cash conversion.
               </Card>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <Card title="SPAR (Legacy / Prior)" icon={<ClipboardCheck className="h-5 w-5" />}>
-                Former SPAR franchise operator. Guild Chairman experience and Managing Director exposure across
-                distribution-centre operations — where margin, stock flow, and discipline are non-negotiable.
+              <Card
+                title="SPAR (Operating leadership)"
+                icon={
+                  <div className="flex h-10 w-16 items-center justify-center rounded-lg bg-[#007d32] text-xs font-semibold text-white">
+                    SPAR
+                  </div>
+                }
+              >
+                30+ years of operating leadership across local and international SPAR stores and distribution — with guild
+                chair exposure where discipline, stock flow, and execution are non-negotiable.
               </Card>
             </FadeIn>
           </div>
-
-          <FadeIn delay={0.22}>
-            <div className="mt-10 rounded-2xl border border-black/10 bg-white/70 p-6 shadow-sm backdrop-blur">
-              <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-                <div>
-                  <h3 className="text-base font-semibold tracking-tight">Want the portfolio section to be more specific?</h3>
-                  <p className="mt-1 text-sm text-black/70">
-                    We can add locations, store count, and a short investment thesis for each brand — or keep it high level.
-                  </p>
-                </div>
-                <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center rounded-2xl bg-black px-5 py-3 text-sm font-medium text-white shadow-sm hover:opacity-95"
-                >
-                  Update portfolio details <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </div>
-            </div>
-          </FadeIn>
         </div>
       </section>
 
@@ -341,47 +398,60 @@ export default function DansantanWebsite() {
               {
                 title: "Cash Flow & Controls",
                 icon: <Coins className="h-5 w-5" />,
-                body: "Daily discipline around payables, cash buffers, and approvals that stop leakage."
+                body: "Daily discipline around payables, cash buffers, and approvals that stop leakage.",
+                pills: ["Cash buffers", "Payables rhythm", "Approvals"]
               },
               {
                 title: "Stock + Margin Control (Operator Grade)",
                 icon: <BarChart3 className="h-5 w-5" />,
-                body: "Ordering, par levels, variance management, and guardrails for margin and shrink."
+                body: "Ordering, par levels, variance management, and guardrails for margin and shrink.",
+                pills: ["Par levels", "Variance", "Supplier discipline"]
               },
               {
                 title: "Unit Economics Review",
                 icon: <LineChart className="h-5 w-5" />,
-                body: "Identify the 20% of levers that move EBITDA, cash conversion, and owner return."
+                body: "Identify the 20% of levers that move EBITDA, cash conversion, and owner return.",
+                pills: ["20% levers", "Owner returns", "Scorecards"]
               },
               {
                 title: "Operations & SOPs",
                 icon: <ClipboardCheck className="h-5 w-5" />,
-                body: "Runbooks, checklists, shift routines, and controls managers can actually follow."
+                body: "Runbooks, checklists, shift routines, and controls managers can actually follow.",
+                pills: ["Shift routines", "Checklists", "Manager-ready"]
               },
               {
                 title: "Leadership & People Systems",
                 icon: <Users className="h-5 w-5" />,
-                body: "Accountability, coaching, and performance rhythms that don’t need you in the store."
+                body: "Accountability, coaching, and performance rhythms that don’t need you in the store.",
+                pills: ["Accountability", "Coaching", "Cadence"]
               },
               {
                 title: "90-Day Turnaround Sprint",
                 icon: <LineChart className="h-5 w-5" />,
-                body: "Diagnose, prioritise, execute. Weekly scorecards, owner-level decision support, and field time."
+                body: "Diagnose, prioritise, execute. Weekly scorecards, owner-level decision support, and field time.",
+                pills: ["Diagnose", "Prioritise", "Execute"]
               },
               {
                 title: "Franchisee–Franchisor Translation (optional)",
                 icon: <ShieldCheck className="h-5 w-5" />,
-                body: "Bridge expectations, data, and reality between the franchisor playbook and store constraints."
+                body: "Bridge expectations, data, and reality between the franchisor playbook and store constraints.",
+                pills: ["Data translation", "Expectations", "Guardrails"]
               },
               {
                 title: "Governance & Compliance (Practical)",
                 icon: <ShieldCheck className="h-5 w-5" />,
-                body: "Simple policies and controls that keep you compliant without slowing the operation."
+                body: "Simple policies and controls that keep you compliant without slowing the operation.",
+                pills: ["Policies", "Audit ready", "Practical controls"]
               }
             ].map((item, idx) => (
               <FadeIn key={item.title} delay={0.05 * (idx + 1)}>
                 <Card title={item.title} icon={item.icon}>
-                  {item.body}
+                  <p>{item.body}</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {item.pills.map((pill) => (
+                      <Pill key={pill}>{pill}</Pill>
+                    ))}
+                  </div>
                 </Card>
               </FadeIn>
             ))}
@@ -393,14 +463,14 @@ export default function DansantanWebsite() {
                 <div>
                   <h3 className="text-base font-semibold tracking-tight">Not sure where to start?</h3>
                   <p className="mt-1 text-sm text-black/70">
-                    We’ll do a quick discovery and recommend the smallest set of actions that create momentum.
+                    Run a quick sanity check to see where execution is slipping, then pick the right engagement.
                   </p>
                 </div>
                 <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center rounded-2xl bg-black px-5 py-3 text-sm font-medium text-white shadow-sm hover:opacity-95"
+                  href="/sanity-check"
+                  className="inline-flex items-center justify-center rounded-2xl bg-black px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:opacity-95"
                 >
-                  Book a 20-min call <ArrowRight className="ml-2 h-4 w-4" />
+                  Run a Sanity Check <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </div>
             </div>
@@ -603,13 +673,12 @@ export default function DansantanWebsite() {
       </section>
 
       {/* Latest thinking */}
-      <section className="border-t border-black/5">
+      <section id="insights" className="border-t border-black/5">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <FadeIn>
             <SectionTitle
-              kicker="Latest thinking (from the operator’s desk)"
-              title="Insights you can download"
-              subtitle="Short operator notes you can share with teams and partners."
+              title="Insights to challenge convention"
+              subtitle="Leadership perspectives on the future of franchise."
             />
           </FadeIn>
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
@@ -634,10 +703,23 @@ export default function DansantanWebsite() {
                   <div className="relative h-40 w-full overflow-hidden bg-black/5">
                     <img src={post.image} alt={post.title} className="h-full w-full object-contain" />
                   </div>
-                  <div className="p-4 text-sm font-semibold text-black group-hover:text-black/80">{post.title}</div>
+                  <div className="p-4 text-center text-sm font-semibold text-black group-hover:text-black/80">
+                    {post.title}
+                  </div>
                 </a>
               </FadeIn>
             ))}
+          </div>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3">
+            <div className="text-sm text-black/70">Follow on LinkedIn for new operator notes.</div>
+            <a
+              href="https://www.linkedin.com/in/mario-santana-dansantan/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center rounded-2xl border border-black/10 bg-white px-5 py-3 text-sm font-semibold text-black shadow-sm transition hover:bg-black hover:text-white"
+            >
+              Follow on LinkedIn → mario-santana-dansantan
+            </a>
           </div>
         </div>
       </section>
@@ -664,7 +746,7 @@ export default function DansantanWebsite() {
                     <Mail className="mt-0.5 h-4 w-4 text-black/40" />
                     <div>
                       <div className="font-medium text-black">Email</div>
-                      <div className="text-black/70">dansantancompany@gmail.com</div>
+                      <div className="text-black/70">mario@dansantan.com</div>
                     </div>
                   </div>
 
@@ -688,7 +770,7 @@ export default function DansantanWebsite() {
                 <div className="mt-6 rounded-2xl border border-black/10 bg-white p-5">
                   <div className="text-xs font-semibold text-black/60">Prefer WhatsApp?</div>
                   <p className="mt-2 text-sm text-black/70">
-                    Add your number in the form and we’ll reply with a convenient time.
+                    Add your number in the form and we’ll reply with a convenient time. WhatsApp is optional — email works too.
                   </p>
                 </div>
               </div>
@@ -826,7 +908,7 @@ export default function DansantanWebsite() {
                       aria-live="polite"
                     >
                       Thanks for reaching out. We’ll reply from{" "}
-                      <span className="font-medium">dansantancompany@gmail.com</span> with next steps.
+                      <span className="font-medium">mario@dansantan.com</span> with next steps.
                     </div>
                   ) : null}
 
