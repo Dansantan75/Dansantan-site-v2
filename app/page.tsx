@@ -13,6 +13,9 @@ import {
   Phone,
   MapPin,
   CheckCircle2,
+  MessageCircle,
+  Menu,
+  X,
 } from "lucide-react";
 
 // Single-file, production-ready landing page for DANSANTAN
@@ -90,6 +93,7 @@ function validateEmail(email: string) {
 export default function DansantanWebsite() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
   const [touched, setTouched] = useState<Record<string, boolean>>({});
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [submissionState, setSubmissionState] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [submissionError, setSubmissionError] = useState("");
 
@@ -154,45 +158,96 @@ export default function DansantanWebsite() {
   };
 
   const nav = [
-    { label: "Portfolio", href: "#portfolio" },
-    { label: "Services", href: "#services" },
-    { label: "Approach", href: "#approach" },
-    { label: "Outcomes", href: "#outcomes" },
-    { label: "About", href: "#about" },
+    { label: "How it works", href: "#how-it-works" },
+    { label: "What we do", href: "#what-we-do" },
+    { label: "Who it’s for", href: "#who-its-for" },
+    { label: "Insights", href: "#insights" },
     { label: "Contact", href: "#contact" },
   ];
+
+  const whatsappUrl =
+    "https://wa.me/27824988638?text=Hi%20Mario,%20I%E2%80%99m%20on%20the%20DANSANTAN%20site.%20I%E2%80%99d%20like%20to%20start%20a%20conversation%20about%20my%20business.";
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-white to-black/[0.03] text-black">
       {/* Top bar */}
-          <header className="sticky top-0 z-40 border-b border-black/5 bg-white/70 backdrop-blur">
-            <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-              <a href="#" className="flex items-center gap-2">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-black/10 bg-white shadow-sm overflow-hidden">
-                  <img src="/logo.png" alt="DANSANTAN logo" className="h-full w-full object-cover" />
+      <header className="sticky top-0 z-40 border-b border-black/5 bg-white/80 backdrop-blur">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="flex items-center gap-4 py-3">
+            <a href="/" className="flex items-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-black/10 bg-white shadow-sm sm:h-14 sm:w-14">
+                <img src="/logo.png" alt="DANSANTAN logo" className="h-full w-full object-cover" />
+              </div>
+              <div className="leading-tight">
+                <div className="text-base font-semibold tracking-tight text-black sm:text-lg">DANSANTAN</div>
+                <div className="mt-1 text-[11px] font-normal tracking-[0.18em] text-black/60 sm:text-xs">
+                  People · Purpose · Performance
                 </div>
-                <div className="leading-tight">
-                  <div className="text-sm font-semibold tracking-tight">DANSANTAN</div>
-                  <div className="text-[11px] text-black/60">Holding company • Franchise investments • Advisory</div>
-                </div>
-          </a>
-          <nav className="hidden items-center gap-6 text-sm text-black/70 sm:flex">
-            {nav.map((n) => (
-              <a key={n.href} href={n.href} className="hover:text-black">
-                {n.label}
-              </a>
-            ))}
-          </nav>
-          <div className="flex items-center gap-2">
-            <a
-              href="https://wa.me/27824988638?text=Hi%2C%20I%20would%20like%20to%20book%20a%2020-min%20call."
-              className="inline-flex items-center justify-center rounded-xl border border-black/10 bg-black px-4 py-2 text-sm font-medium text-white shadow-sm hover:opacity-95"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Book a call <ArrowRight className="ml-2 h-4 w-4" />
+              </div>
             </a>
+
+            <nav className="hidden flex-1 items-center justify-center gap-6 text-sm text-black/70 lg:flex">
+              {nav.map((n) => (
+                <a key={n.href} href={n.href} className="transition hover:text-black">
+                  {n.label}
+                </a>
+              ))}
+            </nav>
+
+            <div className="ml-auto flex items-center gap-3">
+              <a
+                href="/sanity-check"
+                className="inline-flex items-center justify-center rounded-full bg-black px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:opacity-95 sm:px-5"
+              >
+                Run a Sanity Check
+              </a>
+              <a
+                href={whatsappUrl}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full text-black/70 transition hover:text-black"
+                target="_blank"
+                rel="noreferrer"
+                title="Start a conversation"
+              >
+                <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                <span className="sr-only">Start a conversation on WhatsApp</span>
+              </a>
+              <button
+                type="button"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 text-black/80 transition hover:border-black/20 lg:hidden"
+                aria-label="Toggle navigation menu"
+                onClick={() => setIsMenuOpen((open) => !open)}
+              >
+                {isMenuOpen ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
+              </button>
+            </div>
           </div>
+
+          {isMenuOpen ? (
+            <div className="border-t border-black/5 pb-4 pt-3 lg:hidden">
+              <nav className="flex flex-col gap-3 text-sm text-black/80">
+                {nav.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-lg px-2 py-2 transition hover:bg-black/[0.04] hover:text-black"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+                <div className="my-2 h-px bg-black/10" />
+                <a
+                  href={whatsappUrl}
+                  className="rounded-lg px-2 py-2 text-sm font-medium text-black transition hover:bg-black/[0.04]"
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Start a conversation (WhatsApp)
+                </a>
+              </nav>
+            </div>
+          ) : null}
         </div>
       </header>
 
@@ -326,7 +381,8 @@ export default function DansantanWebsite() {
       </section>
 
       {/* Services */}
-      <section id="services" className="border-t border-black/5">
+      <section id="services" className="relative border-t border-black/5">
+        <div id="what-we-do" className="absolute -top-24 h-24 w-px" aria-hidden="true" />
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <FadeIn>
             <SectionTitle
@@ -409,7 +465,8 @@ export default function DansantanWebsite() {
       </section>
 
       {/* Approach */}
-      <section id="approach" className="border-t border-black/5">
+      <section id="approach" className="relative border-t border-black/5">
+        <div id="how-it-works" className="absolute -top-24 h-24 w-px" aria-hidden="true" />
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <FadeIn>
             <SectionTitle
@@ -541,7 +598,8 @@ export default function DansantanWebsite() {
       </section>
 
       {/* About */}
-      <section id="about" className="border-t border-black/5">
+      <section id="about" className="relative border-t border-black/5">
+        <div id="who-its-for" className="absolute -top-24 h-24 w-px" aria-hidden="true" />
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <div className="grid gap-8 lg:grid-cols-5 lg:items-start">
             <div className="lg:col-span-2">
@@ -603,7 +661,8 @@ export default function DansantanWebsite() {
       </section>
 
       {/* Latest thinking */}
-      <section className="border-t border-black/5">
+      <section className="relative border-t border-black/5">
+        <div id="insights" className="absolute -top-24 h-24 w-px" aria-hidden="true" />
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <FadeIn>
             <SectionTitle
