@@ -14,6 +14,7 @@ import {
   MapPin,
   CheckCircle2,
 } from "lucide-react";
+import { Header } from "@/components/site/Header";
 
 // Single-file, production-ready landing page for DANSANTAN
 // Styling: Tailwind (available by default). No external assets required.
@@ -153,48 +154,9 @@ export default function DansantanWebsite() {
     }
   };
 
-  const nav = [
-    { label: "Portfolio", href: "#portfolio" },
-    { label: "Services", href: "#services" },
-    { label: "Approach", href: "#approach" },
-    { label: "Outcomes", href: "#outcomes" },
-    { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-white to-black/[0.03] text-black">
-      {/* Top bar */}
-          <header className="sticky top-0 z-40 border-b border-black/5 bg-white/70 backdrop-blur">
-            <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-              <a href="#" className="flex items-center gap-2">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-black/10 bg-white shadow-sm overflow-hidden">
-                  <img src="/logo.png" alt="DANSANTAN logo" className="h-full w-full object-cover" />
-                </div>
-                <div className="leading-tight">
-                  <div className="text-sm font-semibold tracking-tight">DANSANTAN</div>
-                  <div className="text-[11px] text-black/60">Holding company • Franchise investments • Advisory</div>
-                </div>
-          </a>
-          <nav className="hidden items-center gap-6 text-sm text-black/70 sm:flex">
-            {nav.map((n) => (
-              <a key={n.href} href={n.href} className="hover:text-black">
-                {n.label}
-              </a>
-            ))}
-          </nav>
-          <div className="flex items-center gap-2">
-            <a
-              href="https://wa.me/27824988638?text=Hi%2C%20I%20would%20like%20to%20book%20a%2020-min%20call."
-              className="inline-flex items-center justify-center rounded-xl border border-black/10 bg-black px-4 py-2 text-sm font-medium text-white shadow-sm hover:opacity-95"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Book a call <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero */}
       <section className="relative overflow-hidden">
@@ -326,7 +288,8 @@ export default function DansantanWebsite() {
       </section>
 
       {/* Services */}
-      <section id="services" className="border-t border-black/5">
+      <section id="services" className="relative border-t border-black/5">
+        <div id="what-we-do" className="absolute -top-24 h-24 w-px" aria-hidden="true" />
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <FadeIn>
             <SectionTitle
@@ -409,7 +372,8 @@ export default function DansantanWebsite() {
       </section>
 
       {/* Approach */}
-      <section id="approach" className="border-t border-black/5">
+      <section id="approach" className="relative border-t border-black/5">
+        <div id="how-it-works" className="absolute -top-24 h-24 w-px" aria-hidden="true" />
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <FadeIn>
             <SectionTitle
@@ -541,7 +505,8 @@ export default function DansantanWebsite() {
       </section>
 
       {/* About */}
-      <section id="about" className="border-t border-black/5">
+      <section id="about" className="relative border-t border-black/5">
+        <div id="who-its-for" className="absolute -top-24 h-24 w-px" aria-hidden="true" />
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <div className="grid gap-8 lg:grid-cols-5 lg:items-start">
             <div className="lg:col-span-2">
@@ -603,7 +568,8 @@ export default function DansantanWebsite() {
       </section>
 
       {/* Latest thinking */}
-      <section className="border-t border-black/5">
+      <section className="relative border-t border-black/5">
+        <div id="insights" className="absolute -top-24 h-24 w-px" aria-hidden="true" />
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <FadeIn>
             <SectionTitle
