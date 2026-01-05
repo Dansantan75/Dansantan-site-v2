@@ -14,7 +14,7 @@ import {
   MapPin,
   CheckCircle2,
 } from "lucide-react";
-import { Header } from "@/components/site/Header";
+import Header from "@/components/site/Header";
 
 // Single-file, production-ready landing page for DANSANTAN
 // Styling: Tailwind (available by default). No external assets required.
