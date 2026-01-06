@@ -31,15 +31,15 @@ export default function Header() {
   const whatsappLink = `https://wa.me/27824988638?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-black/10 bg-white/85 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-        <Link href="/" className="flex items-center gap-3" aria-label="DANSANTAN home">
-          <div className="relative h-[72px] w-[72px] overflow-hidden rounded-full">
-            <Image src="/logo.png" alt="DANSANTAN logo" fill sizes="72px" className="object-contain" draggable={false} priority />
+    <header className="sticky top-0 z-50 border-b border-black/10 bg-white/90 backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+        <Link href="/" className="flex items-center gap-3 sm:gap-4" aria-label="DANSANTAN home">
+          <div className="relative h-14 w-14 overflow-hidden rounded-full sm:h-16 sm:w-16">
+            <Image src="/logo.png" alt="DANSANTAN logo" fill sizes="64px" className="object-contain" draggable={false} priority />
           </div>
           <div className="leading-tight">
-            <div className="text-[20px] font-semibold tracking-tight text-black">DANSANTAN</div>
-            <div className="mt-1 flex items-center gap-2 text-[13px] font-medium tracking-[0.30em] text-black/60">
+            <div className="text-[18px] font-semibold tracking-tight text-black sm:text-[19px]">DANSANTAN</div>
+            <div className="mt-1 flex items-center gap-1.5 text-[12px] font-medium tracking-[0.18em] text-black/60 sm:text-[12.5px]">
               <span>People</span>
               <span className="h-[2px] w-[2px] rounded-full bg-black/30" />
               <span>Purpose</span>
@@ -49,7 +49,7 @@ export default function Header() {
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-8 text-[16px] font-medium text-black/65 md:flex" aria-label="Primary">
+        <nav className="hidden flex-1 items-center justify-center gap-6 text-[15px] font-medium text-black/65 md:flex" aria-label="Primary">
           {nav.map((item) => (
             <a key={item.href} href={item.href} className="transition-colors hover:text-black">
               {item.label}
@@ -57,19 +57,20 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 sm:gap-3">
           <Link
             href="/sanity-check"
-            className="inline-flex items-center justify-center rounded-full bg-black px-4 py-2 text-[14px] font-semibold text-white shadow-sm transition hover:opacity-90 sm:px-5"
+            className="inline-flex items-center justify-center rounded-full bg-black px-4 py-2 text-[13px] font-semibold text-white shadow-sm transition hover:bg-black/90 sm:px-5 sm:text-[14px]"
           >
-            Run a Sanity Check <ArrowRight className="ml-2 h-4 w-4" />
+            Run a Sanity Check
+            <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
           <a
             href={whatsappLink}
             target="_blank"
             rel="noreferrer"
             aria-label="Start a WhatsApp conversation"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/15 bg-white shadow-sm transition hover:bg-black/[0.03]"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-black/15 bg-white shadow-sm transition hover:bg-black/[0.03] sm:h-10 sm:w-10"
           >
             <Image src="/icon/whatsapp.svg" alt="WhatsApp" width={22} height={22} priority />
           </a>
