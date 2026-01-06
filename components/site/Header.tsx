@@ -39,7 +39,7 @@ export default function Header() {
           </div>
           <div className="leading-tight">
             <div className="text-[18px] font-semibold tracking-tight text-black sm:text-[19px]">DANSANTAN</div>
-            <div className="mt-1 flex items-center gap-1.5 text-[12px] font-medium tracking-[0.18em] text-black/60 sm:text-[12.5px]">
+            <div className="mt-1 flex items-center gap-1.5 text-[12px] font-medium tracking-[0.16em] text-black/60 sm:text-[12.5px]">
               <span>People</span>
               <span className="h-[2px] w-[2px] rounded-full bg-black/30" />
               <span>Purpose</span>
@@ -49,7 +49,7 @@ export default function Header() {
           </div>
         </Link>
 
-        <nav className="hidden flex-1 items-center justify-center gap-6 text-[15px] font-medium text-black/65 md:flex" aria-label="Primary">
+        <nav className="hidden flex-1 items-center justify-center gap-7 text-[15px] font-medium text-black/65 md:flex" aria-label="Primary">
           {nav.map((item) => (
             <a key={item.href} href={item.href} className="transition-colors hover:text-black">
               {item.label}
@@ -60,7 +60,7 @@ export default function Header() {
         <div className="flex items-center gap-2 sm:gap-3">
           <Link
             href="/sanity-check"
-            className="inline-flex items-center justify-center rounded-full bg-black px-4 py-2 text-[13px] font-semibold text-white shadow-sm transition hover:bg-black/90 sm:px-5 sm:text-[14px]"
+            className="inline-flex items-center justify-center rounded-full bg-black px-4 py-1.5 text-[12.5px] font-semibold text-white shadow-sm transition hover:bg-black/90 sm:px-5 sm:py-2 sm:text-[13px]"
           >
             Run a Sanity Check
             <ArrowRight className="ml-2 h-4 w-4" />
