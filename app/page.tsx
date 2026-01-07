@@ -15,6 +15,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import Header from "@/components/site/Header";
+import Hero from "@/components/site/Hero";
 
 // Single-file, production-ready landing page for DANSANTAN
 // Styling: Tailwind (available by default). No external assets required.
@@ -158,78 +159,7 @@ export default function DansantanWebsite() {
     <div className="min-h-screen bg-gradient-to-b from-white via-white to-black/[0.03] text-black">
       <Header />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-black/[0.06] blur-3xl" />
-          <div className="absolute -bottom-24 right-[-40px] h-72 w-72 rounded-full bg-black/[0.05] blur-3xl" />
-        </div>
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-5">
-          <img
-            src="/logo.png"
-            alt="DANSANTAN watermark"
-            className="max-h-[520px] max-w-[520px] object-contain blur-[0.5px]"
-            aria-hidden="true"
-          />
-        </div>
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <FadeIn>
-            <div className="mx-auto max-w-3xl text-center">
-              <div className="mb-4 flex flex-wrap items-center justify-center gap-2">
-                <Pill>Franchise investments</Pill>
-                <Pill>Angel investor</Pill>
-                <Pill>Operator advisory</Pill>
-              </div>
-              <h1 className="text-3xl font-semibold tracking-tight sm:text-5xl">
-                A holding company built in franchising — with an operator’s advisory arm.
-              </h1>
-              <p className="mt-5 text-sm leading-6 text-black/70 sm:text-base">
-                I’m not a career consultant. I’m an operator who’s spent decades inside franchise businesses — where stock,
-                margin, people and cash flow decide who survives. DANSANTAN backs franchise investments and helps franchisees
-                build control: clean numbers, tight systems, and execution that holds up under pressure.
-              </p>
-              <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <a
-                  href="#contact"
-                  className="inline-flex w-full items-center justify-center rounded-2xl bg-black px-5 py-3 text-sm font-medium text-white shadow-sm hover:opacity-95 sm:w-auto"
-                >
-                  Get a benchmark <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-                <a
-                  href="#services"
-                  className="inline-flex w-full items-center justify-center rounded-2xl border border-black/10 bg-white/70 px-5 py-3 text-sm font-medium text-black shadow-sm hover:bg-white sm:w-auto"
-                >
-                  See services
-                </a>
-              </div>
-            </div>
-          </FadeIn>
-
-          <div className="mt-12 grid gap-4 sm:grid-cols-3">
-            {[
-              {
-                title: "Owner returns + cash discipline",
-                body: "Not “more sales” — more cash that actually lands."
-              },
-              {
-                title: "Lean systems + accountability",
-                body: "Simple routines your managers can run without you."
-              },
-              {
-                title: "Measurable KPIs + governance",
-                body: "Scorecards that catch problems early — before the bank does."
-              }
-            ].map((item, idx) => (
-              <FadeIn key={item.title} delay={0.05 * (idx + 1)}>
-                <div className="rounded-2xl border border-black/10 bg-white/70 p-5 text-left shadow-sm backdrop-blur">
-                  <h3 className="text-base font-semibold text-black">{item.title}</h3>
-                  <p className="mt-2 text-sm text-black/70">{item.body}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Hero />
 
       {/* Portfolio */}
       <section id="portfolio" className="border-t border-black/5">
