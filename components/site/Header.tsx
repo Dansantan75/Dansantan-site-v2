@@ -22,7 +22,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-black/10 bg-white/85 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-6">
         {/* Brand */}
         <Link
           href="/"
@@ -30,22 +30,22 @@ export default function Header() {
           aria-label="DANSANTAN home"
           onClick={() => setMobileOpen(false)}
         >
-          <div className="relative h-24 w-24 overflow-hidden rounded-full sm:h-28 sm:w-28">
+          <div className="relative h-12 w-12 overflow-hidden rounded-full sm:h-14 sm:w-14">
             <Image
               src="/logo.png"
               alt="DANSANTAN logo"
               fill
-              sizes="(min-width: 640px) 112px, 96px"
+              sizes="(min-width: 640px) 56px, 48px"
               priority
               className="object-contain"
             />
           </div>
 
           <div className="ml-1 leading-tight">
-            <div className="text-[20px] font-semibold tracking-tight text-black sm:text-[22px]">
+            <div className="text-[17px] font-semibold tracking-tight text-black sm:text-[19px]">
               DANSANTAN
             </div>
-            <div className="mt-1 flex items-center gap-2 text-[13px] font-medium tracking-[0.30em] text-black/60 sm:text-[14px]">
+            <div className="mt-0.5 hidden items-center gap-1.5 text-[12px] font-medium tracking-[0.18em] text-black/60 sm:mt-1 sm:flex sm:text-[12.5px]">
               <span>People</span>
               <span className="h-[2px] w-[2px] rounded-full bg-black/30" />
               <span>Purpose</span>
@@ -69,7 +69,7 @@ export default function Header() {
         </nav>
 
         {/* Actions (NO SANITY CTA HERE) */}
-        <div className="flex items-center gap-2">
+        <div className="flex flex-shrink-0 items-center gap-2">
           <a
             href={whatsappLink}
             target="_blank"
