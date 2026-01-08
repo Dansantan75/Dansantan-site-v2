@@ -7,7 +7,7 @@ const authorityItems = [
   { name: "VIDA e Caffè", desc: "Coffee retail & unit economics" },
   { name: "BOOTLEGGER", desc: "Café operations & service rhythm" },
   { name: "ULTRA Liquors", desc: "Stock flow, margin & compliance" },
-  { name: "SPAR Group", desc: "Grocery retail, distribution & franchise governance" }
+  { name: "SPAR Group", desc: "Grocery and liquor retail, distribution & governance" }
 ];
 
 export default function Page() {
@@ -22,7 +22,7 @@ export default function Page() {
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 overflow-hidden"
         >
-          <div className="absolute right-[-140px] top-1/2 -translate-y-1/2 opacity-[0.085] blur-[0px] md:right-[-120px]">
+          <div className="absolute right-[-140px] top-16 z-0 opacity-[0.085] md:right-[-120px]">
             {/* NOTE: Uses public/logo.png */}
             <img
               src="/logo.png"
@@ -35,16 +35,16 @@ export default function Page() {
           <div className="absolute inset-y-0 right-0 w-[55%] bg-gradient-to-l from-white via-white/80 to-transparent" />
         </div>
 
-        <div className="relative mx-auto max-w-6xl px-4 pb-14 pt-10 sm:px-6 sm:pb-20 sm:pt-14">
+        <div className="relative z-10 mx-auto max-w-6xl px-4 pb-14 pt-10 sm:px-6 sm:pb-20 sm:pt-14">
           <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
             {/* LEFT: copy */}
             <div>
               {/* Chips */}
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap justify-end gap-2 lg:justify-start">
                 {chips.map((c) => (
                   <span
                     key={c}
-                    className="rounded-full border border-black/10 bg-white/70 px-3 py-1 text-xs font-medium text-black/70 shadow-sm backdrop-blur"
+                    className="rounded-full border border-black/20 bg-white/70 px-3 py-1 text-xs font-medium text-black/70 shadow-sm backdrop-blur"
                   >
                     {c}
                   </span>
@@ -73,11 +73,6 @@ export default function Page() {
                   We’re built by operators who have spent decades inside franchised businesses —
                   living the gap between strategy on paper and execution on the floor.
                 </p>
-                <p>
-                  That experience shapes how we invest, operate, and advise: focusing on disciplined
-                  execution, tighter unit economics, and simple operating systems that work under
-                  real-world pressure.
-                </p>
               </div>
 
               {/* CTAs */}
@@ -104,19 +99,20 @@ export default function Page() {
             <div className="lg:pt-2">
               <div className="rounded-2xl border border-black/10 bg-white/80 p-6 shadow-sm backdrop-blur">
                 <h3 className="text-base font-semibold tracking-tight">
-                  Holdings &amp; operating leadership
+                  Holding &amp; Operating Leadership
                 </h3>
 
                 <div className="mt-3 space-y-3 text-sm leading-6 text-black/65">
                   <p>
-                    We’ve built and operated across coffee, café, liquor, and grocery retail — inside
-                    franchised environments where margins, stock flow, people, and compliance matter
-                    daily.
+                    We’ve built and operated across Grocery Retail and Liquor, Coffee and Café, —
+                    inside Franchised Environments where margins, stock flow, people, and compliance
+                    matter daily, as well as corporate Wholesale and Distribution scaling
+                    Independent Retailers in one of South Africas biggest listed Supermarket Chains.
                   </p>
                   <p>
-                    Our experience spans both owner-operated businesses and senior operating
-                    leadership within large franchise systems, shaping a practical, execution-first
-                    approach to investment and advisory work.
+                    Our experience shapes how we invest, operate, and advise: focusing on disciplined
+                    execution, tighter unit economics, and simple operating systems that work under
+                    real world pressure.
                   </p>
                 </div>
 
