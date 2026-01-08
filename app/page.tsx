@@ -22,7 +22,7 @@ export default function Page() {
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 overflow-hidden"
         >
-          <div className="absolute right-[-140px] top-16 z-0 opacity-[0.085] md:right-[-120px]">
+          <div className="absolute right-[-140px] top-12 z-0 opacity-[0.1] md:right-[-120px]">
             {/* NOTE: Uses public/logo.png */}
             <img
               src="/logo.png"
@@ -32,7 +32,7 @@ export default function Page() {
           </div>
 
           {/* subtle fade so watermark doesn’t fight the copy */}
-          <div className="absolute inset-y-0 right-0 w-[55%] bg-gradient-to-l from-white via-white/80 to-transparent" />
+          <div className="absolute inset-y-0 right-0 w-[45%] bg-gradient-to-l from-white via-white/70 to-transparent md:w-[40%]" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-6xl px-4 pb-14 pt-10 sm:px-6 sm:pb-20 sm:pt-14">
@@ -40,7 +40,7 @@ export default function Page() {
             {/* LEFT: copy */}
             <div>
               {/* Chips */}
-              <div className="flex flex-wrap justify-end gap-2 lg:justify-start">
+              <div className="flex flex-wrap justify-center gap-2 sm:justify-start">
                 {chips.map((c) => (
                   <span
                     key={c}
