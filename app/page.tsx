@@ -1,4 +1,3 @@
-import Header from "@/components/site/Header";
 import Link from "next/link";
 
 const chips = ["Franchise Investments", "Angel Investing", "Operator Advisory"];
@@ -13,8 +12,6 @@ const authorityItems = [
 export default function Page() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-white to-black/[0.03] text-black">
-      <Header />
-
       {/* HERO */}
       <section className="relative">
         {/* Watermark (centered behind heading/subheading, fades right) */}

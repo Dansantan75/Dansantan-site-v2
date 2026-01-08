@@ -2,6 +2,7 @@ import './globals.css';
 
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
+import Header from '@/components/Header';
 
 export const metadata: Metadata = {
   title: 'DANSANTAN | Franchise investments & operator advisory',
@@ -16,8 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="flex min-h-screen w-full flex-col">{children}</body>
-      <Analytics />
+      <body className="flex min-h-screen w-full flex-col bg-neutral-950 text-neutral-50">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Analytics />
+      </body>
     </html>
   );
 }
