@@ -10,7 +10,7 @@ const authorityItems = [
   { name: "SPAR Group", desc: "Grocery and liquor retail, distribution & governance" }
 ];
 
-export default function Page() {
+export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-white to-black/[0.03] text-black">
       {/* HERO */}
