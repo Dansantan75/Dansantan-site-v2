@@ -17,12 +17,12 @@ export default function Page() {
 
       {/* HERO */}
       <section className="relative">
-        {/* Watermark (left aligned behind heading/subheading) */}
+        {/* Watermark (centered behind heading/subheading, fades right) */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 overflow-hidden"
         >
-          <div className="absolute left-[-140px] top-12 z-0 opacity-[0.1] md:left-[-120px]">
+          <div className="absolute left-1/2 top-14 z-0 -translate-x-[62%] opacity-[0.1] md:top-16">
             {/* NOTE: Uses public/logo.png */}
             <img
               src="/logo.png"
@@ -32,7 +32,7 @@ export default function Page() {
           </div>
 
           {/* subtle fade so watermark doesn’t fight the copy */}
-          <div className="absolute inset-y-0 left-0 w-[45%] bg-gradient-to-r from-white via-white/70 to-transparent md:w-[40%]" />
+          <div className="absolute inset-y-0 left-[45%] w-[55%] bg-gradient-to-r from-transparent via-white/70 to-white md:left-[50%] md:w-[50%]" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-6xl px-4 pb-14 pt-10 sm:px-6 sm:pb-20 sm:pt-14">
