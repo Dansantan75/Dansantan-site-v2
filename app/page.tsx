@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HowItWorks from "@/components/HowItWorks";
 
 const chips = ["Franchise Investments", "Angel Investing", "Operator Advisory"];
 
@@ -136,6 +137,7 @@ export default function Page() {
       </section>
 
       {/* Anchor targets for nav/CTAs */}
+      <HowItWorks />
       <div id="services" />
     </div>
   );
