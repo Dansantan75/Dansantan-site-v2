@@ -40,12 +40,12 @@ export default function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="relative scroll-mt-16 bg-neutral-950 text-neutral-50"
+      className="relative scroll-mt-24 bg-white text-neutral-900"
       aria-label="How it works"
     >
       <div className="mx-auto max-w-7xl px-6 py-16 md:px-8 md:py-20">
         <div className="max-w-2xl">
-          <span className="inline-flex rounded-full border border-neutral-800 bg-neutral-900/40 px-3 py-1 text-xs tracking-wide text-neutral-200">
+          <span className="inline-flex rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs tracking-wide text-neutral-700">
             HOW IT WORKS
           </span>
 
@@ -53,31 +53,36 @@ export default function HowItWorks() {
             A clear, operator-led engagement model
           </h2>
 
-          <p className="mt-4 text-base leading-relaxed text-neutral-300">
+          <p className="mt-4 text-base leading-relaxed text-neutral-600">
             No pitches. No packaged programmes. Clarity first — then execution, if aligned.
           </p>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           {steps.map((s) => (
-            <div key={s.n} className="rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6">
+            <div
+              key={s.n}
+              className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
+            >
               <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-800 bg-neutral-950/40">
-                  <span className="text-sm font-semibold text-neutral-200">{s.n}</span>
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200 bg-neutral-50">
+                  <span className="text-sm font-semibold text-neutral-800">{s.n}</span>
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold">{s.title}</h3>
-                  <p className="mt-2 text-sm text-neutral-300">{s.body}</p>
-                  <p className="mt-4 text-xs tracking-wide text-neutral-400">{s.note}</p>
+                  <h3 className="text-lg font-semibold text-neutral-900">{s.title}</h3>
+
+                  <p className="mt-2 text-sm leading-relaxed text-neutral-600">{s.body}</p>
+
+                  <p className="mt-4 text-xs tracking-wide text-neutral-500">{s.note}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-10 rounded-2xl border border-neutral-800 bg-neutral-900/20 p-6">
-          <p className="text-sm text-neutral-300">
+        <div className="mt-10 rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
+          <p className="text-sm text-neutral-600">
             This model is deliberate. It filters noise, protects focus, and ensures alignment
             before momentum.
           </p>
