@@ -138,7 +138,7 @@ export default function Home() {
 
       {/* Anchor targets for nav/CTAs */}
       <HowItWorks />
-      <div id="services" />
+      <section id="services" className="scroll-mt-24" aria-hidden="true" />
     </div>
   );
 }
