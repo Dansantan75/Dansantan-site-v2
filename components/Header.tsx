@@ -1,17 +1,24 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 
-const chips = [
-  { label: "Franchise Investments", href: "#services" },
-  { label: "Angel Investing", href: "#services" },
-  { label: "Operator Advisory", href: "#services" }
+const navItems = [
+  { label: "How it works", href: "#how-it-works" },
+  { label: "What we do", href: "#services" },
+  { label: "Who it’s for", href: "#who-its-for" },
+  { label: "Insights", href: "#insights" },
+  { label: "Contact", href: "#contact" }
 ];
 
 export default function Header() {
+  const [logoMissing, setLogoMissing] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 border-b border-neutral-200 bg-white/80 backdrop-blur">
-      <div className="mx-auto max-w-7xl px-6 md:px-8">
-        <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 md:px-8">
+        <Link href="/" className="flex items-center gap-3 text-neutral-900">
+          {logoMissing ? (
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-neutral-200 bg-white shadow-sm">
               <svg
                 width="18"
@@ -35,42 +42,28 @@ export default function Header() {
                 />
               </svg>
             </span>
+          ) : (
+            <img
+              src="/logo.svg"
+              alt="DANSANTAN logo"
+              className="h-9 w-9"
+              onError={() => setLogoMissing(true)}
+            />
+          )}
+          <span className="text-sm font-semibold tracking-wide">DANSANTAN</span>
+        </Link>
 
-            <span className="text-sm font-semibold tracking-wide text-neutral-900">
-              DANSANTAN
-            </span>
-          </Link>
-
-          <nav className="flex items-center gap-6">
+        <nav className="hidden flex-1 items-center justify-center gap-6 md:flex">
+          {navItems.map((item) => (
             <a
-              href="#how-it-works"
-              className="text-sm text-neutral-700 transition hover:text-neutral-900"
+              key={item.href}
+              href={item.href}
+              className="text-sm font-medium text-neutral-900 transition hover:text-neutral-600"
             >
-              How it works
+              {item.label}
             </a>
-
-            <Link
-              href="/resources"
-              className="text-sm text-neutral-700 transition hover:text-neutral-900"
-            >
-              Resources
-            </Link>
-          </nav>
-        </div>
-
-        <div className="pb-3">
-          <div className="flex flex-wrap gap-2">
-            {chips.map((c) => (
-              <a
-                key={c.label}
-                href={c.href}
-                className="inline-flex items-center rounded-full border border-neutral-200 bg-white px-3 py-1 text-xs text-neutral-700 shadow-sm transition hover:bg-neutral-50 hover:text-neutral-900"
-              >
-                {c.label}
-              </a>
-            ))}
-          </div>
-        </div>
+          ))}
+        </nav>
       </div>
     </header>
   );
