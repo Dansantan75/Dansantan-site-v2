@@ -62,7 +62,7 @@ export default function HowItWorks() {
           {steps.map((s) => (
             <div
               key={s.n}
-              className="rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6"
+              className="rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]"
             >
               <div className="flex items-start gap-4">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-800 bg-neutral-950/40">
