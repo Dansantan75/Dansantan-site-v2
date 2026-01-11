@@ -20,7 +20,7 @@ export default function Home() {
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 overflow-hidden"
         >
-          <div className="absolute left-1/2 top-14 z-0 -translate-x-[62%] opacity-[0.1] md:top-16">
+          <div className="absolute left-[45%] top-14 z-0 -translate-x-1/2 opacity-[0.1] md:top-16">
             {/* NOTE: Uses public/logo.png */}
             <img
               src="/logo.png"

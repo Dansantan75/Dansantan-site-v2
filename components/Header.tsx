@@ -9,7 +9,8 @@ const navItems = [
   { label: "What we do", href: "#services" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Who it’s for", href: "#who-its-for" },
-  { label: "Who we are", href: "#who-we-are" }
+  { label: "Who we are", href: "#who-we-are" },
+  { label: "Resources", href: "/resources" }
 ];
 
 const logoCandidates = ["/logo.svg", "/logo.png", "/logo-mark.svg"];
@@ -27,19 +28,19 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-6 md:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <span className="relative inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm">
-              {logoSrc ? (
-                <Image
-                  src={logoSrc}
-                  alt="DANSANTAN"
-                  width={40}
-                  height={40}
-                  className="h-10 w-10 object-contain"
-                  onError={() => setIdx((v) => v + 1)}
-                  priority
-                />
-              ) : (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            {logoSrc ? (
+              <Image
+                src={logoSrc}
+                alt="DANSANTAN"
+                width={56}
+                height={56}
+                className="h-14 w-14 object-contain"
+                onError={() => setIdx((v) => v + 1)}
+                priority
+              />
+            ) : (
+              <span className="inline-flex h-14 w-14 items-center justify-center">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path
                     d="M12 2l8 4.5v11L12 22l-8-4.5v-11L12 2z"
                     stroke="currentColor"
@@ -54,24 +55,26 @@ export default function Header() {
                     strokeLinecap="round"
                   />
                 </svg>
-              )}
-            </span>
+              </span>
+            )}
 
             <span className="flex flex-col leading-tight">
               <span className="text-sm font-semibold tracking-wide text-neutral-900">DANSANTAN</span>
-              <span className="text-[12px] text-neutral-500">People. Purpose. Performance.</span>
+              <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-500">
+                PEOPLE · PURPOSE · PERFORMANCE
+              </span>
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-8 md:flex">
+          <nav className="hidden flex-1 items-center justify-center gap-8 md:flex">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.label}
                 href={item.href}
-                className="text-sm font-medium text-neutral-900/90 transition hover:text-neutral-900"
+                className="text-[16px] font-medium text-neutral-900/90 transition hover:text-neutral-900"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -89,13 +92,6 @@ export default function Header() {
               </svg>
               WhatsApp
             </a>
-
-            <Link
-              href="/resources"
-              className="text-sm font-medium text-neutral-900/90 transition hover:text-neutral-900"
-            >
-              Resources
-            </Link>
           </div>
         </div>
       </div>
