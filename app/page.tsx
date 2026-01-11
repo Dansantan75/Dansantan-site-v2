@@ -25,7 +25,7 @@ export default function Home() {
             <img
               src="/logo.png"
               alt=""
-              className="h-[520px] w-[520px] select-none object-contain md:h-[620px] md:w-[620px]"
+              className="h-[600px] w-[600px] select-none object-contain md:h-[720px] md:w-[720px]"
             />
           </div>
 
