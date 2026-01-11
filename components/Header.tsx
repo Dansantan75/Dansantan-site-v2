@@ -17,6 +17,7 @@ const logoCandidates = ["/logo.svg", "/logo.png", "/logo-mark.svg"];
 
 export default function Header() {
   const [idx, setIdx] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
   const logoSrc = useMemo(() => logoCandidates[idx] ?? null, [idx]);
 
   const phone = "27824988638";
@@ -79,6 +80,33 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
+            <button
+              type="button"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-neutral-200 text-neutral-900 transition hover:bg-neutral-100 md:hidden"
+              aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((open) => !open)}
+            >
+              {menuOpen ? (
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
+                  <path
+                    d="M6 6l12 12M18 6l-12 12"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
+                  <path
+                    d="M4 7h16M4 12h16M4 17h16"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              )}
+            </button>
             <a
               href={waHref}
               target="_blank"
@@ -94,6 +122,22 @@ export default function Header() {
             </a>
           </div>
         </div>
+        {menuOpen ? (
+          <nav className="border-t border-neutral-200 bg-white/95 px-2 py-3 shadow-sm md:hidden">
+            <div className="flex flex-col gap-2">
+              {navItems.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="rounded-lg px-3 py-2 text-sm font-medium text-neutral-900 transition hover:bg-neutral-100"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </nav>
+        ) : null}
       </div>
     </header>
   );
