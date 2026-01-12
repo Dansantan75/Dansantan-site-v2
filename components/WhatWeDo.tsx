@@ -22,7 +22,7 @@ export default function WhatWeDo() {
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+          <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
             <h3 className="text-lg font-semibold">Invest</h3>
             <p className="mt-2 text-sm text-neutral-600">
               We invest where execution and economics align.
@@ -39,7 +39,7 @@ export default function WhatWeDo() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+          <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
             <h3 className="text-lg font-semibold">Advise</h3>
             <p className="mt-2 text-sm text-neutral-600">
               Operator-led advisory for owners who stay accountable.
@@ -56,7 +56,7 @@ export default function WhatWeDo() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+          <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
             <h3 className="text-lg font-semibold">Operate</h3>
             <p className="mt-2 text-sm text-neutral-600">
               Direct operating involvement where execution risk is real.
