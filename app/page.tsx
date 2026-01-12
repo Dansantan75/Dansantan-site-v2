@@ -1,5 +1,6 @@
 import Link from "next/link";
 import HowItWorks from "@/components/HowItWorks";
+import WhatWeDo from "@/components/WhatWeDo";
 
 const chips = ["Franchise Investments", "Angel Investing", "Operator Advisory"];
 
@@ -138,6 +139,7 @@ export default function Home() {
 
       {/* Anchor targets for nav/CTAs */}
       <HowItWorks />
+      <WhatWeDo />
       <section id="services" className="scroll-mt-24" aria-hidden="true" />
     </div>
   );
