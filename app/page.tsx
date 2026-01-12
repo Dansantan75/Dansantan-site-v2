@@ -1,6 +1,7 @@
 import Link from "next/link";
 import HowItWorks from "@/components/HowItWorks";
 import WhoItsFor from "@/components/WhoItsFor";
+import WhoWeAre from "@/components/WhoWeAre";
 import WhatWeDo from "@/components/WhatWeDo";
 
 const chips = ["Franchise Investments", "Angel Investing", "Operator Advisory"];
@@ -142,6 +143,7 @@ export default function Home() {
       <HowItWorks />
       <WhatWeDo />
       <WhoItsFor />
+      <WhoWeAre />
       <section id="services" className="scroll-mt-24" aria-hidden="true" />
     </div>
   );
