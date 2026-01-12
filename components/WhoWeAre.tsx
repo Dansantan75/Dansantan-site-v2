@@ -2,12 +2,12 @@ export default function WhoWeAre() {
   return (
     <section
       id="who-we-are"
-      className="relative scroll-mt-24 bg-neutral-50 text-neutral-900"
+      className="relative scroll-mt-24 bg-white text-neutral-900"
       aria-label="Who we are"
     >
       <div className="mx-auto max-w-7xl px-6 py-16 md:px-8 md:py-20">
         <div className="max-w-2xl">
-          <span className="inline-flex rounded-full border border-neutral-200 bg-white px-3 py-1 text-xs tracking-wide text-neutral-700">
+          <span className="inline-flex rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs tracking-wide text-neutral-700">
             WHO WE ARE
           </span>
 
@@ -17,153 +17,150 @@ export default function WhoWeAre() {
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-12">
-          <div className="md:col-span-8 space-y-6">
+          <div className="md:col-span-7">
             <div className="rounded-2xl border border-neutral-200 bg-white p-7 shadow-sm">
               <p className="text-base font-medium text-neutral-900">
                 I didn’t choose retail — it chose me.
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-neutral-700">
-                I grew up inside operating environments where the smell of fresh bread at sunrise
-                mattered just as much as the numbers at close of trade. Where people, process, and
-                pressure intersected every day.
-              </p>
-            </div>
 
-            <div className="rounded-2xl border border-neutral-200 bg-white p-7 shadow-sm">
-              <h3 className="text-sm font-semibold tracking-wide text-neutral-900">The classroom</h3>
-              <p className="mt-3 text-sm leading-relaxed text-neutral-700">
-                For nearly three decades, retail was my classroom. From the shop floor to leading
-                national strategy at{" "}
-                <span className="font-medium text-neutral-900">SPAR Group</span>, I learned how real
-                businesses work — and why many fail.
-              </p>
-              <p className="mt-3 text-sm leading-relaxed text-neutral-700">
-                I’ve turned struggling stores around, built teams that cared, and learned to
-                measure success in more than just margin.
-              </p>
-            </div>
+              <div className="mt-4 space-y-4 text-sm leading-relaxed text-neutral-700">
+                <p>
+                  I grew up inside operating environments where the smell of fresh bread at sunrise
+                  mattered just as much as the numbers at close of trade — where people, process,
+                  and pressure intersect every day.
+                </p>
 
-            <div className="rounded-2xl border border-neutral-200 bg-white p-7 shadow-sm">
-              <h3 className="text-sm font-semibold tracking-wide text-neutral-900">Proof points</h3>
+                <p>
+                  For nearly three decades, retail was my classroom. From the shop floor to leading
+                  national strategy at{" "}
+                  <span className="font-medium text-neutral-900">SPAR Group</span>, I learned how
+                  real businesses work — and why many fail.
+                </p>
 
-              <div className="mt-4 flex flex-wrap gap-2">
-                {[
-                  "Mr SPAR (2013)",
-                  "SPAR: Mauritius & India",
-                  "EUROSPAR turnaround: Ireland",
-                  "National Executive Committee"
-                ].map((t) => (
-                  <span
-                    key={t}
-                    className="inline-flex items-center rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs text-neutral-700"
-                  >
-                    {t}
-                  </span>
-                ))}
+                <p>
+                  I’ve turned struggling stores around, built teams that cared, and learned to
+                  measure success in more than just margin. Along the way, I had the privilege of
+                  serving as <span className="font-medium text-neutral-900">Mr SPAR (2013)</span>,
+                  helping launch SPAR in{" "}
+                  <span className="font-medium text-neutral-900">Mauritius and India</span>, turning
+                  around the{" "}
+                  <span className="font-medium text-neutral-900">EUROSPAR format in Ireland</span>,
+                  and serving on the{" "}
+                  <span className="font-medium text-neutral-900">
+                    National Executive Committee
+                  </span>{" "}
+                  of a JSE-listed retailer.
+                </p>
+
+                <p>
+                  And then I walked away — not because I was done, but because I wanted to test
+                  everything I had learned with my own capital, my own people, and my own risk.
+                </p>
               </div>
 
-              <p className="mt-4 text-sm leading-relaxed text-neutral-700">
-                These weren’t highlights on a CV — they were operating lessons earned under
-                pressure inside a listed retail environment.
-              </p>
+              <div className="mt-6 border-t border-neutral-200 pt-5">
+                <p className="text-sm font-semibold text-neutral-900">Mario Santana</p>
+                <p className="text-xs text-neutral-600">Founder — DANSANTAN</p>
+              </div>
             </div>
+          </div>
 
-            <div className="rounded-2xl border border-neutral-200 bg-white p-7 shadow-sm">
-              <h3 className="text-sm font-semibold tracking-wide text-neutral-900">The pivot</h3>
+          <div className="md:col-span-5">
+            <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-7 shadow-sm">
+              <h3 className="text-lg font-semibold tracking-tight text-neutral-900">
+                What operators can expect from us
+              </h3>
 
               <p className="mt-3 text-sm leading-relaxed text-neutral-700">
-                And then I walked away. Not because I was done — but because I wanted to test
-                everything I had learned with my own capital, my own people, and my own risk.
+                DANSANTAN exists to bring experienced judgement into the moments that matter: when
+                margins tighten, cash flow gets strained, people issues surface, and decisions
+                can’t wait for perfect information.
               </p>
 
-              <div className="mt-5 rounded-2xl border border-neutral-200 bg-neutral-50 p-5">
+              <div className="mt-5 space-y-3 text-sm text-neutral-700">
+                <div className="flex gap-3">
+                  <span className="mt-[2px] inline-flex h-5 w-5 items-center justify-center rounded-full border border-neutral-300 bg-white text-[11px] font-semibold text-neutral-900">
+                    1
+                  </span>
+                  <p>
+                    <span className="font-medium text-neutral-900">Commercial clarity:</span> unit
+                    economics, margin levers, and working capital — made simple and decision-ready.
+                  </p>
+                </div>
+
+                <div className="flex gap-3">
+                  <span className="mt-[2px] inline-flex h-5 w-5 items-center justify-center rounded-full border border-neutral-300 bg-white text-[11px] font-semibold text-neutral-900">
+                    2
+                  </span>
+                  <p>
+                    <span className="font-medium text-neutral-900">Operating discipline:</span>{" "}
+                    rhythms, controls, and standards that hold under real-world pressure.
+                  </p>
+                </div>
+
+                <div className="flex gap-3">
+                  <span className="mt-[2px] inline-flex h-5 w-5 items-center justify-center rounded-full border border-neutral-300 bg-white text-[11px] font-semibold text-neutral-900">
+                    3
+                  </span>
+                  <p>
+                    <span className="font-medium text-neutral-900">People performance:</span> clear
+                    accountability, practical leadership, and a culture that keeps execution
+                    consistent.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-6 rounded-2xl border border-neutral-200 bg-white p-5">
                 <p className="text-sm text-neutral-800">
-                  That decision is what shaped{" "}
-                  <span className="font-semibold text-neutral-900">DANSANTAN</span>.
+                  We don’t bring theory to operators.{" "}
+                  <span className="font-semibold text-neutral-900">
+                    We bring judgement shaped by responsibility.
+                  </span>
                 </p>
               </div>
             </div>
+          </div>
+        </div>
 
-            <div className="rounded-2xl border border-neutral-200 bg-neutral-900 px-7 py-6 text-neutral-50 shadow-sm">
-              <p className="text-sm leading-relaxed text-neutral-200">
-                We don’t bring theory to operators.
-              </p>
-              <p className="mt-1 text-base font-semibold">
-                We bring judgement shaped by responsibility.
+        <div className="mt-8 rounded-2xl border border-neutral-200 bg-white p-7 shadow-sm">
+          <h3 className="text-sm font-semibold tracking-wide text-neutral-900">
+            How that shows up through DANSANTAN
+          </h3>
+
+          <p className="mt-3 max-w-4xl text-sm leading-relaxed text-neutral-700">
+            Today, we build, own, and operate across grocery retail, liquor, and franchised café
+            environments. That means living with tight margins, working capital pressure, real
+            people problems, and daily decisions that compound over time — alongside compliance
+            and accountability that can’t be outsourced.
+          </p>
+
+          <div className="mt-5 grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-5">
+              <p className="text-sm font-medium text-neutral-900">We simplify</p>
+              <p className="mt-2 text-sm text-neutral-700">
+                We cut through noise and focus on the few decisions that move outcomes.
               </p>
             </div>
 
-            <div className="rounded-2xl border border-neutral-200 bg-white p-7 shadow-sm">
-              <h3 className="text-sm font-semibold tracking-wide text-neutral-900">Today</h3>
-
-              <p className="mt-3 text-sm leading-relaxed text-neutral-700">
-                Today, <span className="font-medium text-neutral-900">we</span> build, own, and
-                operate businesses across grocery retail, liquor, and franchised café environments.
+            <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-5">
+              <p className="text-sm font-medium text-neutral-900">We stay close</p>
+              <p className="mt-2 text-sm text-neutral-700">
+                We work at the level where reality lives — not where decks are made.
               </p>
+            </div>
 
-              <p className="mt-4 text-sm text-neutral-700">We live with:</p>
-
-              <ul className="mt-3 space-y-2 text-sm text-neutral-700">
-                <li>• Tight margins and working capital pressure</li>
-                <li>• The reality of managing people, not structures</li>
-                <li>• Daily operational decisions that compound over time</li>
-                <li>• Compliance, governance, and accountability that can’t be outsourced</li>
-              </ul>
-
-              <p className="mt-4 text-sm leading-relaxed text-neutral-700">
-                We’ve achieved consistent growth — but growth isn’t the point. What matters is
-                building businesses that hold under pressure, develop people into leaders, and
-                create places customers trust and communities support.
-              </p>
-
-              <p className="mt-4 text-sm leading-relaxed text-neutral-700">
-                Retail reflects the effort, care, and courage of the people behind it. That’s why
-                we show up every day — to build, to lead, to grow, and to leave things stronger
-                than we found them.
+            <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-5">
+              <p className="text-sm font-medium text-neutral-900">We build durability</p>
+              <p className="mt-2 text-sm text-neutral-700">
+                Systems, controls, and people capability that hold under pressure.
               </p>
             </div>
           </div>
 
-          <div className="md:col-span-4 space-y-6 md:pt-2">
-            <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
-              <h3 className="text-sm font-semibold tracking-wide text-neutral-900">
-                What this means in practice
-              </h3>
-
-              <ul className="mt-4 space-y-2 text-sm text-neutral-700">
-                <li>• We prioritise cash flow before complexity</li>
-                <li>• We prefer simple systems that hold under pressure</li>
-                <li>• We stay close to operations and decision-making</li>
-                <li>• We respect accountability — because we carry it</li>
-              </ul>
-
-              <p className="mt-4 text-xs text-neutral-500">
-                Experience doesn’t guarantee outcomes — but it improves judgement.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
-              <h3 className="text-sm font-semibold tracking-wide text-neutral-900">
-                How we show up
-              </h3>
-              <ul className="mt-4 space-y-2 text-sm text-neutral-700">
-                <li>• Operator-led, not advisory at a distance</li>
-                <li>• Discipline before expansion</li>
-                <li>• Data anchored to real-world cadence</li>
-                <li>• Actionable clarity, not complexity</li>
-              </ul>
-            </div>
-            <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
-              <h3 className="text-sm font-semibold tracking-wide text-neutral-900">
-                Principles we don’t compromise
-              </h3>
-              <ul className="mt-4 space-y-2 text-sm text-neutral-700">
-                <li>• Accountability over ego</li>
-                <li>• Operators first</li>
-                <li>• Integrity in numbers</li>
-                <li>• People and process together</li>
-              </ul>
-            </div>
-          </div>
+          <p className="mt-6 text-sm text-neutral-600">
+            Experience doesn’t guarantee outcomes — but it improves judgement. That’s what we bring
+            to the table.
+          </p>
         </div>
       </div>
     </section>
