@@ -122,29 +122,24 @@ export default function WhoWeAre() {
           </div>
         </div>
 
-        <div className="mt-8 rounded-2xl border border-neutral-200 bg-white p-7 shadow-sm">
+        <div className="mt-8">
           <h3 className="text-sm font-semibold tracking-wide text-neutral-900">
             How that shows up through DANSANTAN
           </h3>
 
           <p className="mt-3 max-w-4xl text-sm leading-relaxed text-neutral-700">
-            Today, we build, own, and operate businesses across grocery retail, liquor, and
-            franchised café environments. That means living with tight margins, working-capital
-            pressure, real people problems, and daily decisions that compound over time — alongside
-            compliance and accountability that can’t be outsourced.
+            Today, we build, own, and operate businesses where margins are tight, people matter,
+            and decisions compound daily.
           </p>
 
-          <div className="mt-6 rounded-2xl border border-neutral-200 bg-neutral-50 p-5">
-            <p className="text-sm text-neutral-800">
-              We stay close to the work, simplify decision-making, and build systems that hold
-              under pressure.
+          <div className="mt-5 rounded-2xl border border-neutral-200 bg-neutral-50 p-5 md:p-6">
+            <p className="text-base font-semibold tracking-tight text-neutral-900">
+              Experience doesn’t guarantee outcomes — but it improves judgement.
+            </p>
+            <p className="mt-2 text-sm text-neutral-700">
+              That’s what we bring to the table.
             </p>
           </div>
-
-          <p className="mt-6 text-sm text-neutral-600">
-            Experience doesn’t guarantee outcomes — but it improves judgement. That’s what we bring
-            to the table.
-          </p>
         </div>
       </div>
     </section>
