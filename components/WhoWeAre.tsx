@@ -122,23 +122,29 @@ export default function WhoWeAre() {
           </div>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-10">
           <h3 className="text-sm font-semibold tracking-wide text-neutral-900">
             How that shows up through DANSANTAN
           </h3>
 
-          <p className="mt-3 max-w-4xl text-sm leading-relaxed text-neutral-700">
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-neutral-700">
             Today, we build, own, and operate businesses where margins are tight, people matter,
             and decisions compound daily.
           </p>
 
-          <div className="mt-5 rounded-2xl border border-neutral-200 bg-neutral-50 p-5 md:p-6">
-            <p className="text-base font-semibold tracking-tight text-neutral-900">
-              Experience doesn’t guarantee outcomes — but it improves judgement.
-            </p>
-            <p className="mt-2 text-sm text-neutral-700">
-              That’s what we bring to the table.
-            </p>
+          <div className="mt-6 rounded-2xl border border-neutral-200 bg-neutral-50 px-6 py-8 md:px-10 md:py-10">
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="text-lg font-semibold tracking-tight text-neutral-900 md:text-xl">
+                Experience doesn’t guarantee outcomes — but it improves judgement.
+              </p>
+              <p className="mt-2 text-sm text-neutral-700">
+                That’s what we bring to the table.
+              </p>
+
+              <p className="mt-6 font-script text-3xl leading-none text-neutral-900 md:text-4xl">
+                — Mario Santana
+              </p>
+            </div>
           </div>
         </div>
       </div>
