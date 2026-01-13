@@ -134,11 +134,11 @@ export default function WhoWeAre() {
 
           <div className="mt-6 rounded-2xl border border-neutral-200 bg-neutral-50 px-6 py-10 md:px-10 md:py-12">
             <div className="mx-auto max-w-4xl">
-              <p className="text-center text-lg font-semibold tracking-tight text-neutral-900 md:text-xl">
-                Experience doesn’t guarantee outcomes, but it does improve judgement.
+              <p className="text-center text-lg font-semibold italic tracking-tight text-neutral-900 md:text-xl">
+                “Experience doesn’t guarantee outcomes, but it does improve judgement.”
               </p>
 
-              <div className="mt-6 flex justify-end">
+              <div className="mt-4 flex justify-center">
                 <p className="font-script text-xl leading-none text-neutral-900 md:text-2xl">
                   Mario Santana
                 </p>
