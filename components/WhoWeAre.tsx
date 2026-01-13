@@ -59,7 +59,7 @@ export default function WhoWeAre() {
               </div>
 
               <div className="mt-6 border-t border-neutral-200 pt-5">
-                <p className="text-sm font-semibold text-neutral-900">Mario Santana</p>
+                <p className="font-script text-2xl leading-none text-neutral-900">Mario Santana</p>
                 <p className="text-xs text-neutral-600">Founder — DANSANTAN</p>
               </div>
             </div>
@@ -132,18 +132,17 @@ export default function WhoWeAre() {
             and decisions compound daily.
           </p>
 
-          <div className="mt-6 rounded-2xl border border-neutral-200 bg-neutral-50 px-6 py-8 md:px-10 md:py-10">
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="text-lg font-semibold tracking-tight text-neutral-900 md:text-xl">
-                Experience doesn’t guarantee outcomes — but it improves judgement.
-              </p>
-              <p className="mt-2 text-sm text-neutral-700">
-                That’s what we bring to the table.
+          <div className="mt-6 rounded-2xl border border-neutral-200 bg-neutral-50 px-6 py-10 md:px-10 md:py-12">
+            <div className="mx-auto max-w-4xl">
+              <p className="text-center text-lg font-semibold tracking-tight text-neutral-900 md:text-xl">
+                Experience doesn’t guarantee outcomes, but it does improve judgement.
               </p>
 
-              <p className="mt-6 font-script text-3xl leading-none text-neutral-900 md:text-4xl">
-                — Mario Santana
-              </p>
+              <div className="mt-6 flex justify-end">
+                <p className="font-script text-xl leading-none text-neutral-900 md:text-2xl">
+                  Mario Santana
+                </p>
+              </div>
             </div>
           </div>
         </div>
