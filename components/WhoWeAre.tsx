@@ -128,33 +128,17 @@ export default function WhoWeAre() {
           </h3>
 
           <p className="mt-3 max-w-4xl text-sm leading-relaxed text-neutral-700">
-            Today, we build, own, and operate across grocery retail, liquor, and franchised café
-            environments. That means living with tight margins, working capital pressure, real
-            people problems, and daily decisions that compound over time — alongside compliance
-            and accountability that can’t be outsourced.
+            Today, we build, own, and operate businesses across grocery retail, liquor, and
+            franchised café environments. That means living with tight margins, working-capital
+            pressure, real people problems, and daily decisions that compound over time — alongside
+            compliance and accountability that can’t be outsourced.
           </p>
 
-          <div className="mt-5 grid gap-4 md:grid-cols-3">
-            <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-5">
-              <p className="text-sm font-medium text-neutral-900">We simplify</p>
-              <p className="mt-2 text-sm text-neutral-700">
-                We cut through noise and focus on the few decisions that move outcomes.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-5">
-              <p className="text-sm font-medium text-neutral-900">We stay close</p>
-              <p className="mt-2 text-sm text-neutral-700">
-                We work at the level where reality lives — not where decks are made.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-5">
-              <p className="text-sm font-medium text-neutral-900">We build durability</p>
-              <p className="mt-2 text-sm text-neutral-700">
-                Systems, controls, and people capability that hold under pressure.
-              </p>
-            </div>
+          <div className="mt-6 rounded-2xl border border-neutral-200 bg-neutral-50 p-5">
+            <p className="text-sm text-neutral-800">
+              We stay close to the work, simplify decision-making, and build systems that hold
+              under pressure.
+            </p>
           </div>
 
           <p className="mt-6 text-sm text-neutral-600">
