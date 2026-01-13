@@ -2,6 +2,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { Inter, Caveat } from "next/font/google";
+import Header from "@/components/Header";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,7 +26,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${inter.variable} ${caveat.variable} flex min-h-screen w-full flex-col`}>
-        {children}
+        <Header />
+        <main className="flex-1">{children}</main>
+        <FloatingWhatsApp />
         <Analytics />
       </body>
     </html>
