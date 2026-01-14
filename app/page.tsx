@@ -543,9 +543,8 @@ export default function DansantanWebsite() {
                         <div key={p} className="flex gap-2">
                           <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-black/40" />
                           <span>{p}</span>
-                        </div>
+                        </div>         
                       ))}
-                    </div>
                   </div>
                 </div>
               </FadeIn>
