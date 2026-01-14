@@ -4,6 +4,8 @@
 
 @layer base {
   :root {
+    --font-inter: ui-sans-serif;
+    --font-caveat: ui-serif;
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -70,8 +72,14 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
+  }
+  .font-script {
+    font-family: var(--font-caveat), cursive;
   }
 }
 

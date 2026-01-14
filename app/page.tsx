@@ -380,7 +380,6 @@ export default function DansantanWebsite() {
             </FadeIn>
           </div>
         </div>
-      </section>
 
       {/* Services */}
       <section id="services" className="border-t border-black/5">
@@ -473,164 +472,64 @@ export default function DansantanWebsite() {
                   Run a Sanity Check <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
 
-      {/* Approach */}
-      <section id="approach" className="border-t border-black/5">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-          <FadeIn>
-            <SectionTitle
-              kicker="How it works"
-              title="A simple cadence that drives execution"
-              subtitle="The goal isn’t a thick report. It’s consistent action, clear accountability, and measurable progress."
-            />
-          </FadeIn>
+              {/* Headline */}
+              <h1 className="mt-6 text-[40px] font-semibold leading-[1.02] tracking-tight sm:text-6xl">
+                An owner-operator
+                <br />
+                franchise investment
+                <br />
+                holding company
+                <br />
+                built on execution — not
+                <br />
+                theory.
+              </h1>
 
-          <div className="mt-10 grid gap-4 lg:grid-cols-3">
-            {[
-              {
-                step: "01",
-                title: "Diagnose",
-                points: [
-                  "Review P&L, bank and key store KPIs",
-                  "Walk the operation (or do a video walkthrough)",
-                  "Identify the 3–5 constraints holding performance back",
-                  ],
-              },
-              {
-                step: "02",
-                title: "Prioritise",
-                points: [
-                  "Choose high-leverage actions",
-                  "Set targets + scorecards",
-                  "Assign owners and deadlines",
-                ],
-              },
-              {
-                step: "03",
-                title: "Execute",
-                points: [
-                  "Weekly check-ins (40–60 mins)",
-                  "On-site support where needed",
-                  "Tight feedback loop: measure → adjust",
-                ],
-              },
-            ].map((s, idx) => (
-              <FadeIn key={s.step} delay={0.06 * idx}>
-                <div className="rounded-2xl border border-black/10 bg-white/70 p-6 shadow-sm backdrop-blur">
-                  <div className="flex items-baseline justify-between">
-                    <div className="text-xs font-semibold text-black/60">STEP {s.step}</div>
-                    <CheckCircle2 className="h-5 w-5 text-black/30" />
-                  </div>
-                  <h3 className="mt-2 text-lg font-semibold tracking-tight">{s.title}</h3>
-                  <ul className="mt-4 space-y-2 text-sm text-black/70">
-                    {s.points.map((p) => (
-                      <li key={p} className="flex gap-2">
-                        <span className="mt-1 h-1.5 w-1.5 flex-none rounded-full bg-black/40" />
-                        <span>{p}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Outcomes */}
-      <section id="outcomes" className="border-t border-black/5">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-          <FadeIn>
-            <SectionTitle
-              kicker="What changes"
-              title="The outcomes we aim for"
-              subtitle="Typical improvements we target in the first 30–90 days."
-            />
-          </FadeIn>
-
-          <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            <FadeIn delay={0.08}>
-              <div className="rounded-2xl border border-black/10 bg-white/70 p-6 shadow-sm backdrop-blur">
-                <h3 className="text-base font-semibold">Financial clarity</h3>
-                <ul className="mt-4 space-y-2 text-sm text-black/70">
-                  {[
-                    "True gross margin + contribution (not “paper GP”)",
-                    "A cash flow rhythm: payments, creditors, buffers",
-                    "Spend discipline: approvals + thresholds",
-                  ].map((p) => (
-                    <li key={p} className="flex gap-2">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 text-black/40" />
-                      <span>{p}</span>
-                    </li>
-                  ))}
-                </ul>
+              {/* Subheading (extended, no “warts and all” here) */}
+              <div className="mt-6 space-y-4 text-[15px] leading-7 text-black/70 sm:text-base">
+                <p>
+                  <span className="font-semibold text-black">
+                    DANSANTAN is an owner-operator led franchise investment holding company.
+                  </span>{" "}
+                  We’re built by operators who have spent decades inside franchised businesses —
+                  living the gap between strategy on paper and execution on the floor.
+                </p>
               </div>
-            </FadeIn>
-            <FadeIn delay={0.16}>
-              <div className="rounded-2xl border border-black/10 bg-white/70 p-6 shadow-sm backdrop-blur">
-                <h3 className="text-base font-semibold">Operational control</h3>
-                <ul className="mt-4 space-y-2 text-sm text-black/70">
-                  {[
-                    "Stock counts that reconcile (and variance that gets managed)",
-                    "Reduced wastage, tighter ordering, cleaner par levels",
-                    "Better rosters, better service, fewer fires",
-                  ].map((p) => (
-                    <li key={p} className="flex gap-2">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 text-black/40" />
-                      <span>{p}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </FadeIn>
-          </div>
 
-          <FadeIn delay={0.22}>
-            <div className="mt-8 rounded-2xl border border-black/10 bg-black p-6 text-white shadow-sm">
-              <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-                <div>
-                  <h3 className="text-base font-semibold">Want a quick benchmark?</h3>
-                  <p className="mt-1 text-sm text-white/75">
-                    Share your latest P&L and we’ll highlight 3 focus areas to lift EBITDA and reduce cash strain.
-                  </p>
-                </div>
-                <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center rounded-2xl bg-white px-5 py-3 text-sm font-medium text-black shadow-sm hover:opacity-95"
+              {/* CTAs */}
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                {/* Primary */}
+                <Link
+                  href="/sanity-check"
+                  className="inline-flex items-center justify-center rounded-full bg-black px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-black/20"
                 >
-                  Request a benchmark <ArrowRight className="ml-2 h-4 w-4" />
+                  Run a Free Sanity Check →
+                </Link>
+
+                {/* Secondary */}
+                <a
+                  href="#services"
+                  className="inline-flex items-center justify-center rounded-full border border-black/15 bg-white px-5 py-3 text-sm font-semibold text-black/80 shadow-sm transition hover:bg-black/[0.03] focus:outline-none focus:ring-2 focus:ring-black/10"
+                >
+                  See services
                 </a>
               </div>
             </div>
-          </FadeIn>
-        </div>
-      </section>
 
-      {/* About */}
-      <section id="about" className="border-t border-black/5">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-          <div className="grid gap-8 lg:grid-cols-5 lg:items-start">
-            <div className="lg:col-span-2">
-              <FadeIn>
-                <SectionTitle
-                  kicker="About DANSANTAN"
-                  title="Operator-led. Numbers-first. People-aware."
-                  subtitle="DANSANTAN started as a holding company in franchising. The advisory arm closes the gap between franchisor theory and franchisee reality: stock, margin, cash flow, systems, sustainability."
-                />
-              </FadeIn>
-            </div>
-            <div className="lg:col-span-3">
-              <FadeIn delay={0.08}>
-                <div className="rounded-2xl border border-black/10 bg-white/70 p-6 shadow-sm backdrop-blur">
-                  <p className="text-sm leading-6 text-black/70 space-y-3">
-                    DANSANTAN backs franchise investments and works with franchisees who want operator-grade control.
-                    The work is grounded in stores: cleaner numbers, margin guardrails, disciplined stock flow,
-                    people systems, and execution that survives pressure. I translate between franchisor expectations
-                    and franchisee realities so the store can perform without the owner on site.
+            {/* RIGHT: authority block */}
+            <div className="lg:pt-2">
+              <div className="rounded-2xl border border-black/10 bg-white/80 p-6 shadow-sm backdrop-blur">
+                <h3 className="text-base font-semibold tracking-tight">
+                  Holding &amp; Operating Leadership
+                </h3>
+
+                <div className="mt-3 space-y-3 text-sm leading-6 text-black/65">
+                  <p>
+                    We’ve built and operated across Grocery Retail and Liquor, Coffee and Café, —
+                    inside Franchised Environments where margins, stock flow, people, and compliance
+                    matter daily, as well as corporate Wholesale and Distribution scaling
+                    Independent Retailers in one of South Africas biggest listed Supermarket Chains.
                   </p>
                   <div className="mt-6 rounded-2xl border border-black/10 bg-white p-5">
                     <div className="text-xs font-semibold text-black/60">Good fit if you want:</div>
@@ -773,180 +672,32 @@ export default function DansantanWebsite() {
                     Add your number in the form and we’ll reply with a convenient time. WhatsApp is optional — email works too.
                   </p>
                 </div>
-              </div>
-            </FadeIn>
 
-            {/* RIGHT: Form */}
-            <FadeIn delay={0.12}>
-              <div className="w-full">
-                <form
-                  onSubmit={handleSubmit}
-                  noValidate
-                  className="rounded-2xl border border-black/10 bg-white/70 p-6 shadow-sm backdrop-blur"
-                >
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <div>
-                      <label className="text-xs font-medium text-black/70" htmlFor="contact-name">
-                        Name
-                      </label>
-                      <input
-                        id="contact-name"
-                        type="text"
-                        name="name"
-                        value={form.name}
-                        autoComplete="name"
-                        required
-                        onChange={(e) => {
-                          resetSubmissionFeedback();
-                          setForm((s) => ({ ...s, name: e.target.value }));
-                        }}
-                        onBlur={() => setTouched((t) => ({ ...t, name: true }))}
-                        className="mt-1 w-full rounded-xl border border-black/10 bg-white px-3 py-2 text-sm outline-none ring-0 focus:border-black/30"
-                        placeholder="Your name"
-                        aria-invalid={Boolean(touched.name && errors.name)}
-                        aria-describedby={touched.name && errors.name ? "contact-name-error" : undefined}
-                      />
-                      {touched.name && errors.name ? (
-                        <div id="contact-name-error" className="mt-1 text-xs text-black/60">
-                          {errors.name}
-                        </div>
-                      ) : null}
-                    </div>
-
-                    <div>
-                      <label className="text-xs font-medium text-black/70" htmlFor="contact-email">
-                        Email
-                      </label>
-                      <input
-                        id="contact-email"
-                        type="email"
-                        name="email"
-                        value={form.email}
-                        autoComplete="email"
-                        required
-                        onChange={(e) => {
-                          resetSubmissionFeedback();
-                          setForm((s) => ({ ...s, email: e.target.value }));
-                        }}
-                        onBlur={() => setTouched((t) => ({ ...t, email: true }))}
-                        className="mt-1 w-full rounded-xl border border-black/10 bg-white px-3 py-2 text-sm outline-none ring-0 focus:border-black/30"
-                        placeholder="you@company.com"
-                        aria-invalid={Boolean(touched.email && errors.email)}
-                        aria-describedby={touched.email && errors.email ? "contact-email-error" : undefined}
-                      />
-                      {touched.email && errors.email ? (
-                        <div id="contact-email-error" className="mt-1 text-xs text-black/60">
-                          {errors.email}
-                        </div>
-                      ) : null}
-                    </div>
-
-                    <div className="sm:col-span-2">
-                      <label className="text-xs font-medium text-black/70">
-                        Phone / WhatsApp (optional)
-                      </label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={form.phone}
-                        autoComplete="tel"
-                        onChange={(e) => {
-                          resetSubmissionFeedback();
-                          setForm((s) => ({ ...s, phone: e.target.value }));
-                        }}
-                        className="mt-1 w-full rounded-xl border border-black/10 bg-white px-3 py-2 text-sm outline-none ring-0 focus:border-black/30"
-                        placeholder="+27 ..."
-                      />
-                    </div>
-
-                    <div className="sm:col-span-2">
-                      <label className="text-xs font-medium text-black/70" htmlFor="contact-message">
-                        Message
-                      </label>
-                      <textarea
-                        id="contact-message"
-                        name="message"
-                        value={form.message}
-                        required
-                        onChange={(e) => {
-                          resetSubmissionFeedback();
-                          setForm((s) => ({ ...s, message: e.target.value }));
-                        }}
-                        onBlur={() => setTouched((t) => ({ ...t, message: true }))}
-                        rows={6}
-                        className="mt-1 w-full resize-none rounded-xl border border-black/10 bg-white px-3 py-2 text-sm outline-none ring-0 focus:border-black/30"
-                        placeholder="Tell us a bit about your business and what you want to improve."
-                        aria-invalid={Boolean(touched.message && errors.message)}
-                        aria-describedby={touched.message && errors.message ? "contact-message-error" : undefined}
-                      />
-                      {touched.message && errors.message ? (
-                        <div id="contact-message-error" className="mt-1 text-xs text-black/60">
-                          {errors.message}
-                        </div>
-                      ) : null}
-                    </div>
-                  </div>
-
-                  <div className="mt-5 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
-                    <div className="text-xs text-black/60">
-                      By submitting, you agree we may contact you regarding this enquiry.
-                    </div>
-
-                    <button
-                      type="submit"
-                      className="inline-flex items-center justify-center rounded-2xl bg-black px-5 py-3 text-sm font-medium text-white shadow-sm disabled:opacity-50"
-                      disabled={!canSubmit || submissionState === "loading"}
-                    >
-                      {submissionState === "loading" ? "Sending..." : "Send enquiry"}{" "}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </button>
-                  </div>
-
-                  {submissionState === "success" ? (
+                <div className="mt-5 space-y-3">
+                  {authorityItems.map((it) => (
                     <div
-                      className="mt-4 rounded-xl border border-black/10 bg-white p-3 text-sm text-black/70"
-                      aria-live="polite"
+                      key={it.name}
+                      className="flex items-center justify-between rounded-xl border border-black/10 bg-white px-4 py-3"
                     >
                       Thanks for reaching out. We’ll reply from{" "}
                       <span className="font-medium">mario@dansantan.com</span> with next steps.
                     </div>
-                  ) : null}
+                  ))}
+                </div>
 
-                  {submissionState === "error" ? (
-                    <div
-                      className="mt-4 rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-800"
-                      aria-live="assertive"
-                    >
-                      {submissionError}
-                    </div>
-                  ) : null}
-                </form>
+                {/* Removed: “Typical 30–90 day outcomes” block (per your instruction) */}
               </div>
-            </FadeIn>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-black/5">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-10 text-sm text-black/60 sm:px-6 sm:flex-row sm:items-center sm:justify-between">
-          <div>© {new Date().getFullYear()} DANSANTAN. All rights reserved.</div>
-          <div className="flex items-center gap-4">
-            <a className="hover:text-black" href="#portfolio">
-              Portfolio
-            </a>
-            <a className="hover:text-black" href="#services">
-              Services
-            </a>
-            <a className="hover:text-black" href="#contact">
-              Contact
-            </a>
-            <a className="hover:text-black" href="#">
-              Privacy
-            </a>
-          </div>
-        </div>
-      </footer>
+      {/* Anchor targets for nav/CTAs */}
+      <HowItWorks />
+      <WhatWeDo />
+      <WhoItsFor />
+      <WhoWeAre />
+      <section id="services" className="scroll-mt-24" aria-hidden="true" />
     </div>
   );
 }
