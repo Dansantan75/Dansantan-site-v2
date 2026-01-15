@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { brandLogos } from "@/lib/portfolio/brands";
+import BrandLogo from "@/components/BrandLogo";
 
 export const metadata = {
   title: "Portfolio | DANSANTAN",
@@ -27,9 +27,10 @@ export default function PortfolioPage() {
       <section className="grid gap-12">
         <div className="grid gap-8 rounded-2xl border p-8 md:grid-cols-[180px_1fr]">
           <div className="flex items-center">
-            <Image
+            <BrandLogo
               src={brandLogos.spar}
               alt="SPAR Group"
+              fallbackText="SPAR"
               width={160}
               height={60}
               className="object-contain"
@@ -61,9 +62,10 @@ export default function PortfolioPage() {
 
         <div className="grid gap-8 rounded-2xl border p-8 md:grid-cols-[180px_1fr]">
           <div className="flex items-center">
-            <Image
+            <BrandLogo
               src={brandLogos.vida}
               alt="VIDA e Caffè"
+              fallbackText="VIDA"
               width={160}
               height={60}
               className="object-contain"
@@ -84,9 +86,10 @@ export default function PortfolioPage() {
 
         <div className="grid gap-8 rounded-2xl border p-8 md:grid-cols-[180px_1fr]">
           <div className="flex items-center">
-            <Image
+            <BrandLogo
               src={brandLogos.bootlegger}
               alt="Bootlegger Coffee Company"
+              fallbackText="Bootlegger"
               width={160}
               height={60}
               className="object-contain"
@@ -106,9 +109,10 @@ export default function PortfolioPage() {
 
         <div className="grid gap-8 rounded-2xl border p-8 md:grid-cols-[180px_1fr]">
           <div className="flex items-center">
-            <Image
+            <BrandLogo
               src={brandLogos.ultraLiquors}
               alt="Ultra Liquors"
+              fallbackText="Ultra"
               width={160}
               height={60}
               className="object-contain"

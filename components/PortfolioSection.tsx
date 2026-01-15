@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { brandLogos } from "@/lib/portfolio/brands";
+import BrandLogo from "@/components/BrandLogo";
 
 type PortfolioItem = {
   key: string;
@@ -85,9 +85,14 @@ function Tag({ children }: { children: string }) {
 
 function LogoMark({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="relative h-10 w-40">
-      <Image src={src} alt={alt} fill sizes="160px" className="object-contain" priority={false} />
-    </div>
+    <BrandLogo
+      src={src}
+      alt={alt}
+      fallbackText={alt}
+      width={160}
+      height={40}
+      className="object-contain"
+    />
   );
 }
 
