@@ -30,7 +30,7 @@ const portfolio: PortfolioItem[] = [
   {
     key: "vida",
     name: "VIDA e Caffè",
-    logoSrc: "/brands/vida-e-caffe.png",
+    logoSrc: "/brands/vida.png",
     logoAlt: "VIDA e Caffè logo",
     eyebrow: "Franchised coffee retail",
     summary:
