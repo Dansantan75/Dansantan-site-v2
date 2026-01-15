@@ -1,23 +1,36 @@
-import './globals.css';
+import "./globals.css";
+import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
+import { Inter, Caveat } from "next/font/google";
+import Header from "@/components/Header";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
-import type { Metadata } from 'next';
-import { Analytics } from '@vercel/analytics/react';
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter"
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
+  weight: ["400", "600"]
+});
 
 export const metadata: Metadata = {
-  title: 'DANSANTAN | Franchise investments & operator advisory',
+  title: "DANSANTAN | Franchise investments & operator advisory",
   description:
-    'A focused landing page for DANSANTAN that highlights franchise holdings, operator advisory services, outcomes, and a streamlined contact path.'
+    "A focused landing page for DANSANTAN that highlights franchise holdings, operator advisory services, outcomes, and a streamlined contact path."
 };
 
-export default function RootLayout({
-  children
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="flex min-h-screen w-full flex-col">{children}</body>
-      <Analytics />
+      <body className={`${inter.variable} ${caveat.variable} flex min-h-screen w-full flex-col`}>
+        <Header />
+        <main className="flex-1">{children}</main>
+        <FloatingWhatsApp />
+        <Analytics />
+      </body>
     </html>
   );
 }
