@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { brandLogos } from "@/lib/portfolio/brands";
 
 export const metadata = {
   title: "Portfolio | DANSANTAN",
@@ -27,7 +28,7 @@ export default function PortfolioPage() {
         <div className="grid gap-8 rounded-2xl border p-8 md:grid-cols-[180px_1fr]">
           <div className="flex items-center">
             <Image
-              src="/brands/spar.png"
+              src={brandLogos.spar}
               alt="SPAR Group"
               width={160}
               height={60}
@@ -61,7 +62,7 @@ export default function PortfolioPage() {
         <div className="grid gap-8 rounded-2xl border p-8 md:grid-cols-[180px_1fr]">
           <div className="flex items-center">
             <Image
-              src="/brands/vida.png"
+              src={brandLogos.vida}
               alt="VIDA e Caffè"
               width={160}
               height={60}
@@ -84,7 +85,7 @@ export default function PortfolioPage() {
         <div className="grid gap-8 rounded-2xl border p-8 md:grid-cols-[180px_1fr]">
           <div className="flex items-center">
             <Image
-              src="/brands/bootlegger.png"
+              src={brandLogos.bootlegger}
               alt="Bootlegger Coffee Company"
               width={160}
               height={60}
@@ -106,7 +107,7 @@ export default function PortfolioPage() {
         <div className="grid gap-8 rounded-2xl border p-8 md:grid-cols-[180px_1fr]">
           <div className="flex items-center">
             <Image
-              src="/brands/ultra-liquors.png"
+              src={brandLogos.ultraLiquors}
               alt="Ultra Liquors"
               width={160}
               height={60}

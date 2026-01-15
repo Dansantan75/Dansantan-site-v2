@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { brandLogos } from "@/lib/portfolio/brands";
 
 type PortfolioItem = {
   key: string;
@@ -15,7 +16,7 @@ const portfolio: PortfolioItem[] = [
   {
     key: "spar",
     name: "SPAR Group",
-    logoSrc: "/brands/spar.png",
+    logoSrc: brandLogos.spar,
     logoAlt: "SPAR logo",
     eyebrow: "Corporate leadership + owner-operator experience",
     summary:
@@ -30,7 +31,7 @@ const portfolio: PortfolioItem[] = [
   {
     key: "vida",
     name: "VIDA e Caffè",
-    logoSrc: "/brands/vida.png",
+    logoSrc: brandLogos.vida,
     logoAlt: "VIDA e Caffè logo",
     eyebrow: "Franchised coffee retail",
     summary:
@@ -45,7 +46,7 @@ const portfolio: PortfolioItem[] = [
   {
     key: "bootlegger",
     name: "Bootlegger Coffee Company",
-    logoSrc: "/brands/bootlegger.png",
+    logoSrc: brandLogos.bootlegger,
     logoAlt: "Bootlegger Coffee Company logo",
     eyebrow: "Café operations + service rhythm",
     summary:
@@ -60,7 +61,7 @@ const portfolio: PortfolioItem[] = [
   {
     key: "ultra",
     name: "Ultra Liquors",
-    logoSrc: "/brands/ultra-liquors.png",
+    logoSrc: brandLogos.ultraLiquors,
     logoAlt: "Ultra Liquors logo",
     eyebrow: "Liquor retail execution",
     summary:
