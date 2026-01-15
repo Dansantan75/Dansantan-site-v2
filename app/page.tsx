@@ -1,5 +1,6 @@
 import Link from "next/link";
 import HowItWorks from "@/components/HowItWorks";
+import PortfolioSection from "@/components/PortfolioSection";
 import WhoItsFor from "@/components/WhoItsFor";
 import WhoWeAre from "@/components/WhoWeAre";
 import WhatWeDo from "@/components/WhatWeDo";
@@ -135,6 +136,7 @@ export default function Home() {
       {/* Anchor targets for nav/CTAs */}
       <HowItWorks />
       <WhatWeDo />
+      <PortfolioSection />
       <WhoItsFor />
       <WhoWeAre />
       <section id="services" className="scroll-mt-24" aria-hidden="true" />
