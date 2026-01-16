@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 
 type BrandLogoProps = {
@@ -35,13 +34,14 @@ export default function BrandLogo({
   }
 
   return (
-    <Image
+    <img
       src={src}
       alt={alt}
       width={width}
       height={height}
       className={className}
       onError={() => setHasError(true)}
+      loading="lazy"
     />
   );
 }
